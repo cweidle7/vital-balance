@@ -40,17 +40,33 @@
 @media (min-width: 720px) {
   .hero__inner { padding-inline: 0; padding-bottom: var(--sp-20); }
 }
-.hero__pulse {
+.hero__pulse-wrap {
   position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-  opacity: 0.1;
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
   z-index: 0;
+  opacity: 0.1;
+  display: flex;
+  align-items: center;
+}
+.hero__pulse-track {
+  display: flex;
+  flex-shrink: 0;
+  width: 200%;
+  animation: ekg-scroll 16s linear infinite;
+}
+.hero__pulse {
+  width: 50%;
+  flex-shrink: 0;
   user-select: none;
-  object-fit: cover;
+}
+@keyframes ekg-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__pulse-track { animation: none; }
 }
 .hero__content { max-width: 700px; }
 .hero__eyebrow { color: var(--brown-light); margin-bottom: var(--sp-4); }
