@@ -1,0 +1,160 @@
+/* ============================================================
+   Vital Balance — About Page Styles
+   ============================================================ */
+
+/* ---------- PAGE HERO ------------------------------------- */
+.about-hero {
+  margin-top: var(--nav-h);
+  background:
+    radial-gradient(60% 50% at 70% 30%, rgba(3, 89, 161, 0.3) 0%, transparent 60%),
+    linear-gradient(165deg, #024A8A 0%, #012D57 50%, #011E3F 100%);
+  color: var(--cream);
+  padding-block: var(--sp-16) var(--sp-12);
+}
+.about-hero__inner { max-width: var(--max-w); }
+.about-hero .eyebrow { margin-bottom: var(--sp-3); }
+.about-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--cream);
+  margin: 0;
+}
+
+/* ---------- ABOUT BODY ------------------------------------ */
+.about-body {
+  padding-block: var(--section-y);
+}
+.about-body__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-12);
+  align-items: start;
+}
+@media (min-width: 880px) {
+  .about-body__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-16);
+  }
+}
+
+.about-body__copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  margin-bottom: var(--sp-4);
+}
+.about-body__rule {
+  width: 48px;
+  height: 3px;
+  background: var(--brown);
+  border-radius: 2px;
+  margin-bottom: var(--sp-6);
+}
+.about-body__copy p {
+  color: var(--muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-5);
+}
+.about-body__copy p:last-child { margin-bottom: 0; }
+
+/* ---------- PROMISE CARD ---------------------------------- */
+.about-promise {
+  background: linear-gradient(150deg, #024A8A 0%, #012D57 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-10) var(--sp-8);
+  color: var(--cream);
+}
+.about-promise__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-24);
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: var(--sp-8);
+}
+.about-promise__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+.about-promise__list li {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-15);
+  color: rgba(255, 255, 255, 0.88);
+}
+.about-promise__check {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--brown);
+}
+
+/* ---------- CORE VALUES ----------------------------------- */
+.about-values {
+  padding-block: var(--section-y);
+  background: var(--cream-dark);
+}
+.about-values__head {
+  text-align: center;
+  margin-bottom: var(--sp-12);
+}
+.about-values__head .eyebrow { margin-bottom: var(--sp-3); }
+.about-values__head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+}
+.about-values__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+}
+@media (min-width: 720px) {
+  .about-values__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.value-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-8) var(--sp-6);
+  transition: var(--transition);
+}
+.value-card:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-3px);
+}
+.value-card__icon {
+  width: 48px;
+  height: 48px;
+  background: var(--sage);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-5);
+}
+.value-card__icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--cream);
+}
+.value-card h3 {
+  font-family: var(--font-body);
+  font-size: var(--fs-13);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin-bottom: var(--sp-4);
+}
+.value-card p {
+  font-size: var(--fs-15);
+  color: var(--muted);
+  line-height: var(--lh-relaxed);
+}
