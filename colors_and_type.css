@@ -171,7 +171,7 @@
   --transition-fast:   all var(--dur-fast) var(--ease);
 
   /* ---------- Layout primitives ------------------------------- */
-  --banner-h:     44px;
+  --banner-h:     68px;
   --nav-h:        72px;
   --nav-h-scroll: 64px;
   --z-nav:    50;
