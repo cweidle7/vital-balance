@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop — Vital Balance</title>
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="components.css" />
+  <link rel="stylesheet" href="plp.css" />
+</head>
+<body>
+
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__brand" href="vitalbalance-home.html">
+      <span class="nav__brand-name">Vital Balance</span>
+      <span class="nav__brand-tag">Regenerative · Wellness</span>
+    </a>
+    <div class="nav__center">
+      <a class="nav__link" href="vitalbalance-plp.html" aria-current="page">Shop</a>
+      <a class="nav__link" href="#">Science</a>
+      <a class="nav__link" href="#">Journal</a>
+      <a class="nav__link" href="#">About</a>
+    </div>
+    <div class="nav__right">
+      <button class="nav__icon" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a class="nav__icon" href="#" aria-label="Cart, 2 items"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg><span class="nav__cart-count">2</span></a>
+      <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay">
+    <button class="nav-overlay__close" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <a class="nav-overlay__link" href="vitalbalance-plp.html">Shop</a>
+    <a class="nav-overlay__link" href="#">Science</a>
+    <a class="nav-overlay__link" href="#">Journal</a>
+    <a class="nav-overlay__link" href="#">About</a>
+  </div>
+
+  <main>
+    <section class="plp-hero" aria-labelledby="plp-h">
+      <div class="plp-hero__count" aria-hidden="true">24<small>Formulas</small></div>
+      <div class="plp-hero__inner">
+        <h1 id="plp-h" class="plp-hero__title">Every formula, made with care.</h1>
+      </div>
+    </section>
+
+    <section class="trust-bar">
+      <div class="container">
+        <div class="trust-bar__row">
+          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20" /></svg>Regeneratively Sourced</div>
+          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Third-Party Tested</div>
+          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h13l3 4v6h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Free Shipping $75+</div>
+          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>30-Day Returns</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="plp-filters" aria-label="Filter products">
+      <div class="container">
+        <div class="plp-filters__row">
+          <div class="plp-filters__pills">
+            <button class="pill is-active">All <span class="pill__count">24</span></button>
+            <button class="pill">Adaptogen <span class="pill__count">8</span></button>
+            <button class="pill">Longevity <span class="pill__count">5</span></button>
+            <button class="pill">Cellular <span class="pill__count">4</span></button>
+            <button class="pill">Mineral <span class="pill__count">3</span></button>
+            <button class="pill">Immune <span class="pill__count">2</span></button>
+            <button class="pill">Cognitive <span class="pill__count">2</span></button>
+          </div>
+          <button class="plp-filters__sort" type="button">Sort: Featured <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="plp-filters__view" role="group" aria-label="View">
+            <button aria-pressed="true" aria-label="Grid view"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button>
+            <button aria-pressed="false" aria-label="List view"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="plp-grid-wrap">
+      <div class="container">
+        <div class="plp-grid" id="plp-grid">
+          <!-- Skeletons render first; JS swaps in real cards after 600ms -->
+          <div class="product-card is-skeleton is-visible"><div class="product-card__media"></div><div class="product-card__body"><h3 class="product-card__name"></h3><p class="product-card__hook"></p><span class="product-card__price"></span></div></div>
+          <div class="product-card is-skeleton is-visible"><div class="product-card__media"></div><div class="product-card__body"><h3 class="product-card__name"></h3><p class="product-card__hook"></p><span class="product-card__price"></span></div></div>
+          <div class="product-card is-skeleton is-visible"><div class="product-card__media"></div><div class="product-card__body"><h3 class="product-card__name"></h3><p class="product-card__hook"></p><span class="product-card__price"></span></div></div>
+        </div>
+        <div class="plp-loadmore">
+          <button class="btn btn--outline-sage" id="loadmore">Load more</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-tag">Vital Balance</p>
+          <p class="footer__blurb">Regenerative wellness, formulated alongside the practitioners who use it.</p>
+          <div class="footer__socials">
+            <a class="footer__social" href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a class="footer__social" href="#" aria-label="Substack"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4h14v3H5zM5 9h14v3H5zM5 14l7 6 7-6H5z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col"><h4>Shop</h4><ul class="footer__list"><li><a href="vitalbalance-plp.html">All Formulas</a></li><li><a href="#">Adaptogens</a></li><li><a href="#">Longevity</a></li><li><a href="#">Subscriptions</a></li></ul></div>
+        <div class="footer__col"><h4>Learn</h4><ul class="footer__list"><li><a href="#">Our Science</a></li><li><a href="#">Sourcing</a></li><li><a href="#">Journal</a></li><li><a href="#">Practitioners</a></li></ul></div>
+        <div class="footer__col footer__newsletter"><h4>Letters from the practice</h4><p style="font-size: var(--fs-14); color: var(--fg-on-dark-mute); margin-bottom: var(--sp-4);">10% off your first order.</p><form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Welcomed';"><input type="email" placeholder="your@email.com" /><button type="submit">Join</button></form></div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 Vital Balance, Inc.</span><div class="footer__certs"><span>USDA Organic</span><span>NSF Certified</span><span>Climate Neutral</span></div></div>
+    </div>
+  </footer>
+
+  <script src="shared.js"></script>
+  <script>
+    // Product catalog — swapped into grid after 600ms simulate load.
+    const PRODUCTS = [
+      { cat: "Adaptogen", name: "Cellular Vitality Complex", hook: "Sustained mitochondrial energy.", price: "$68", rating: 4.8, badge: "New", img: "adaptogen" },
+      { cat: "Longevity", name: "NAD+ Restorative Tonic", hook: "Supports cellular repair pathways.", price: "$92", rating: 4.9, badge: "Bestseller", img: "longevity" },
+      { cat: "Cellular", name: "Mitochondrial Restore", hook: "Energy production, at the source.", price: "$54", rating: 4.7, badge: null, img: "cellular" },
+      { cat: "Mineral", name: "Trace Mineral Reserve", hook: "From ancient seabeds, ionic form.", price: "$36", priceOld: "$48", rating: 4.6, badge: "Sale", img: "mineral" },
+      { cat: "Immune", name: "Reishi Spore Powder", hook: "Wild-foraged, dual-extracted.", price: "$48", rating: 4.7, badge: null, img: "immune" },
+      { cat: "Cognitive", name: "Lion's Mane Extract", hook: "Clarity, without the crash.", price: "$42", rating: 4.8, badge: null, img: "cognitive" },
+      { cat: "Digestive", name: "Bitters & Bloom", hook: "Pre-meal digestive primer.", price: "$38", rating: 4.6, badge: "New", img: "digestive" },
+      { cat: "Hormonal", name: "Cycle Equilibrium", hook: "Daily endocrine support.", price: "$58", rating: 4.7, badge: null, img: "hormonal" },
+      { cat: "Adaptogen", name: "Ashwagandha KSM-66", hook: "Single-farm, regeneratively grown.", price: "$32", rating: 4.9, badge: "Bestseller", img: "adaptogen" },
+    ];
+
+    const heart = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg>`;
+    const star = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg>`;
+
+    function cardHTML(p) {
+      const badge = p.badge ? `<span class="product-card__badge ${p.badge==='Sale'?'product-card__badge--sale':p.badge==='New'?'product-card__badge--new':''}">${p.badge}</span>` : "";
+      const oldP = p.priceOld ? `<span class="product-card__price-old">${p.priceOld}</span>` : "";
+      return `
+        <a class="product-card" href="vitalbalance-pdp.html">
+          <div class="product-card__media">
+            <div class="product-card__image product-card__image--${p.img}"></div>
+            ${badge}
+            <button class="product-card__wishlist" aria-label="Wishlist" aria-pressed="false">${heart}</button>
+            <div class="product-card__drawer">
+              <button class="btn btn--primary">Add to cart</button>
+              <button class="btn btn--ghost">Quick view</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">${p.cat}</span>
+            <h3 class="product-card__name">${p.name}</h3>
+            <p class="product-card__hook">${p.hook}</p>
+            <div class="product-card__meta">
+              <div>${oldP}<span class="product-card__price">${p.price}</span></div>
+              <div class="product-card__stars">${star}${star}${star}${star}${star}<span class="product-card__stars-num">${p.rating}</span></div>
+            </div>
+          </div>
+        </a>
+      `;
+    }
+
+    setTimeout(() => {
+      const grid = document.getElementById("plp-grid");
+      grid.innerHTML = PRODUCTS.map(cardHTML).join("");
+      // re-bind wishlist + entrance
+      grid.querySelectorAll(".product-card__wishlist").forEach(btn => {
+        btn.addEventListener("click", e => {
+          e.stopPropagation(); e.preventDefault();
+          const v = btn.getAttribute("aria-pressed") === "true";
+          btn.setAttribute("aria-pressed", String(!v));
+        });
+      });
+      const io = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); } });
+      }, { threshold: 0.12 }) : null;
+      if (io) grid.querySelectorAll(".product-card").forEach(c => io.observe(c));
+      else grid.querySelectorAll(".product-card").forEach(c => c.classList.add("is-visible"));
+    }, 600);
+
+    // Filter pill toggle (visual only)
+    document.querySelectorAll(".plp-filters .pill").forEach(p => {
+      p.addEventListener("click", () => {
+        document.querySelectorAll(".plp-filters .pill").forEach(x => x.classList.remove("is-active"));
+        p.classList.add("is-active");
+      });
+    });
+
+    document.getElementById("loadmore").addEventListener("click", e => {
+      e.target.textContent = "All formulas loaded ✓";
+      e.target.disabled = true;
+    });
+  </script>
+</body>
+</html>
