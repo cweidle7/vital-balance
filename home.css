@@ -54,7 +54,7 @@
   display: flex;
   flex-shrink: 0;
   width: 200%;
-  animation: ekg-scroll 16s linear infinite;
+  animation: ekg-scroll 24s linear infinite;
 }
 .hero__pulse {
   width: 50%;
