@@ -62,36 +62,97 @@
 .btn--sm { height: 40px; padding-inline: var(--sp-5); font-size: var(--fs-12); }
 .btn--lg { height: 60px; padding-inline: var(--sp-10); font-size: var(--fs-15); }
 
-/* ---------- NAV (sticky, glass on scroll) ------------------ */
-.nav {
+/* ---------- ANNOUNCEMENT BANNER --------------------------- */
+.announcement-banner {
   position: fixed;
   top: 0; left: 0; right: 0;
+  height: var(--banner-h);
+  z-index: calc(var(--z-nav) + 1);
+  background: var(--charcoal);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-5);
+  padding-inline: var(--gutter);
+  font-size: var(--fs-13);
+  overflow: hidden;
+  transition: height var(--dur-slow) var(--ease), opacity var(--dur-slow) var(--ease);
+}
+.announcement-banner.is-hidden {
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.announcement-banner__text {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.announcement-banner__text strong { font-weight: 600; }
+.announcement-banner__text span {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: var(--fs-12);
+}
+.announcement-banner__cta {
+  background: var(--sage);
+  color: var(--cream);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 6px var(--sp-5);
+  font-size: var(--fs-12);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mid);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--dur) var(--ease);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.announcement-banner__cta:hover { background: var(--sage-dark); color: var(--cream); }
+.announcement-banner__close {
+  position: absolute;
+  right: var(--gutter);
+  top: 50%; transform: translateY(-50%);
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-sm);
+  transition: color var(--dur) var(--ease);
+}
+.announcement-banner__close:hover { color: var(--cream); }
+@media (max-width: 600px) {
+  .announcement-banner__text span { display: none; }
+  .announcement-banner__cta { display: none; }
+}
+
+/* ---------- NAV ------------------------------------------- */
+.nav {
+  position: fixed;
+  top: var(--banner-h); left: 0; right: 0;
   z-index: var(--z-nav);
   height: var(--nav-h);
   padding-inline: var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
-  border-bottom: 1px solid transparent;
-  transition: background var(--dur) var(--ease), height var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+  transition: top var(--dur-slow) var(--ease), height var(--dur) var(--ease);
 }
-.nav.is-scrolled {
-  height: var(--nav-h-scroll);
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom-color: var(--border);
-}
+.nav.is-scrolled { height: var(--nav-h-scroll); }
 /* On dark hero pages, nav starts transparent over hero, then solidifies */
 .nav--over-dark:not(.is-scrolled) {
   background: transparent;
-  backdrop-filter: none;
+  border-bottom-color: transparent;
 }
 .nav--over-dark:not(.is-scrolled) .nav__link,
 .nav--over-dark:not(.is-scrolled) .nav__brand,
-.nav--over-dark:not(.is-scrolled) .nav__icon { color: var(--cream); }
-.nav--over-dark:not(.is-scrolled) .nav__brand-tag { color: rgba(255, 255, 255, 0.7); }
+.nav--over-dark:not(.is-scrolled) .nav__icon,
+.nav--over-dark:not(.is-scrolled) .nav__cta { color: var(--cream); border-color: rgba(255,255,255,0.5); }
 
 .nav__brand {
   display: flex;
@@ -145,6 +206,27 @@
   transition: transform var(--dur) var(--ease);
 }
 .nav__icon:hover { transform: translateY(-1px); }
+
+.nav__cta {
+  display: none;
+  height: 38px;
+  padding-inline: var(--sp-5);
+  background: var(--sage);
+  color: var(--cream);
+  border: 1px solid var(--sage);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-13);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mid);
+  text-transform: uppercase;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  white-space: nowrap;
+}
+.nav__cta:hover { background: var(--sage-dark); border-color: var(--sage-dark); color: var(--cream); }
+@media (min-width: 720px) { .nav__cta { display: inline-flex; } }
 .nav__cart-count {
   position: absolute; top: -6px; right: -8px;
   min-width: 18px; height: 18px; padding: 0 5px;

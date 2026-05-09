@@ -32,7 +32,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: calc(var(--nav-h) + var(--sp-12)) 0 var(--sp-20);
+  padding: calc(var(--nav-h) + var(--banner-h) + var(--sp-12)) 0 var(--sp-20);
 }
 .hero__ghost {
   position: absolute;

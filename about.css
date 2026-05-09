@@ -4,7 +4,7 @@
 
 /* ---------- PAGE HERO ------------------------------------- */
 .about-hero {
-  margin-top: var(--nav-h);
+  margin-top: calc(var(--nav-h) + var(--banner-h));
   background:
     radial-gradient(60% 50% at 70% 30%, rgba(3, 89, 161, 0.3) 0%, transparent 60%),
     linear-gradient(165deg, #024A8A 0%, #012D57 50%, #011E3F 100%);
