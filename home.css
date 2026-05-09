@@ -64,7 +64,7 @@
 .hero__headline em {
   font-style: italic;
   font-weight: 400;
-  color: var(--brown-light);
+  color: var(--brown);
 }
 .hero__sub {
   font-size: var(--fs-16);
