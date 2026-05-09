@@ -246,7 +246,7 @@
   left: 0; right: 0; bottom: 0;
   background: var(--cream);
   border-top: 1px solid var(--border-strong);
-  padding: var(--sp-3) var(--gutter);
+  padding: var(--sp-5) var(--gutter);
   z-index: var(--z-overlay);
   display: flex; align-items: center; gap: var(--sp-4);
   transform: translateY(110%);

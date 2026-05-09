@@ -10,14 +10,13 @@
   min-height: 100svh;
   display: flex;
   align-items: flex-end;
-  /* deep navy gradient — placeholder for lifestyle photo; dark enough for cream text */
   background:
     radial-gradient(120% 80% at 70% 30%, rgba(3, 89, 161, 0.18) 0%, transparent 60%),
     radial-gradient(80% 60% at 20% 80%, rgba(1, 29, 55, 0.65) 0%, transparent 50%),
     linear-gradient(180deg, #01182E 0%, #012D57 40%, #01223F 80%, #010D1A 100%);
   color: var(--cream);
   overflow: hidden;
-  isolation: isolate;       /* contain z-index stack — ghosted text + product card layer cleanly */
+  isolation: isolate;
 }
 /* SVG noise grain — gives the gradient lifestyle-photo texture */
 .hero::before {
