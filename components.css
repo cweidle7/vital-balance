@@ -95,24 +95,14 @@
 
 .nav__brand {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
   text-decoration: none;
-  color: var(--charcoal);
-  line-height: 1;
 }
-.nav__brand-name {
-  font-family: var(--font-display);
-  font-size: var(--fs-24);
-  font-weight: 500;
-  letter-spacing: var(--tracking-display);
-}
-.nav__brand-tag {
-  font-size: 9px;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 500;
+.nav__logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  border-radius: var(--radius-sm);
 }
 
 .nav__center {
