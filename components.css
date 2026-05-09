@@ -104,6 +104,9 @@
   display: block;
   border-radius: var(--radius-sm);
 }
+@media (max-width: 480px) {
+  .nav__logo { height: 36px; }
+}
 
 .nav__center {
   display: none;
@@ -311,7 +314,7 @@
   color: var(--fg-on-dark-mute);
   letter-spacing: var(--tracking-mid);
 }
-.footer__certs { display: flex; gap: var(--sp-5); }
+.footer__certs { display: flex; flex-wrap: wrap; gap: var(--sp-5); }
 
 /* ---------- PRODUCT CARD ---------------------------------- */
 /* Used on Home featured grid + PLP grid + PDP related row */
