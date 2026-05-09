@@ -633,19 +633,19 @@
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-/* ---------- MARQUEE -------------------------------------- */
+/* ---------- VALUE BAR -------------------------------------- */
 .marquee {
   background: var(--sage-dark);
   color: var(--cream);
   border-block: 1px solid var(--sage-deepest);
-  overflow: hidden;
   padding-block: var(--sp-4);
 }
-.marquee__track {
+.marquee__static {
   display: flex;
-  gap: var(--sp-12);
-  width: max-content;
-  animation: marquee 60s linear infinite;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-6) var(--sp-10);
 }
 .marquee__item {
   display: inline-flex; align-items: center; gap: var(--sp-5);
@@ -659,10 +659,6 @@
   border-radius: 50%;
   background: var(--brown-light);
   flex-shrink: 0;
-}
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
 }
 
 /* ---------- CALLOUT CARD (small floating cards) ---------- */
