@@ -62,8 +62,8 @@
   user-select: none;
 }
 @keyframes ekg-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero__pulse-track { animation: none; }
