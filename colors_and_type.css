@@ -104,7 +104,6 @@
 
   /* Semantic type */
   --h-display:  clamp(3rem, 8vw, 6rem);     /* hero headlines */
-  --h-ghost:    clamp(6rem, 18vw, 14rem);   /* ghosted display word */
   --h1:         clamp(2.25rem, 5vw, 3.75rem);
   --h2:         clamp(1.75rem, 3.6vw, 2.75rem);
   --h3:         clamp(1.25rem, 2.4vw, 1.625rem);
