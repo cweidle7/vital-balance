@@ -639,6 +639,7 @@
   color: var(--cream);
   border-block: 1px solid var(--sage-deepest);
   padding-block: var(--sp-4);
+  overflow: hidden;
 }
 .marquee__static {
   display: flex;
@@ -646,6 +647,7 @@
   justify-content: center;
   align-items: center;
   gap: var(--sp-6) var(--sp-10);
+  padding-inline: var(--gutter);
 }
 .marquee__item {
   display: inline-flex; align-items: center; gap: var(--sp-5);
