@@ -53,30 +53,20 @@
 
   --brown:        #E21E2A;   /* brand red — accent */
   --brown-light:  #FFFFFF;   /* tints, icon fills on dark */
-  --brown-dark:   #B5161F;   /* hover red */
 
   --charcoal:     #1A1A1A;   /* primary text (logo subtitle gray) */
   --muted:        #5A6573;   /* secondary text */
   --muted-light:  #9AA3B0;   /* tertiary text */
 
   --white:        #FFFFFF;
-  --black:        #0A0A08;
 
-  /* Status / utility */
-  --success:      #1B7A4E;
-  --warn:         #D6911C;
-  --error:        #E21E2A;
   --star:         #D6911C;   /* amber star color */
 
   /* ---------- Color: semantic --------------------------------- */
   --bg:              var(--cream);
-  --bg-alt:          var(--cream-dark);
-  --bg-dark:         var(--sage-dark);
-  --bg-darker:       var(--sage-deepest);
   --surface:         var(--white);
   --surface-tinted:  #F4F6FA;
   --fg:              var(--charcoal);
-  --fg-muted:        var(--muted);
   --fg-on-dark:      var(--cream);
   --fg-on-dark-mute: #8FADC6;
   --link:            var(--sage-dark);
@@ -88,7 +78,6 @@
   /* ---------- Typography --------------------------------------- */
   --font-display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
   --font-body:    "DM Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono:    ui-monospace, "SF Mono", Menlo, monospace;
 
   /* Modular scale, mobile-first; pages override --step-*-fluid via clamp */
   --fs-12: 0.75rem;
@@ -100,12 +89,9 @@
   --fs-20: 1.25rem;
   --fs-24: 1.5rem;
   --fs-32: 2rem;
-  --fs-40: 2.5rem;
   --fs-48: 3rem;
-  --fs-56: 3.5rem;
   --fs-72: 4.5rem;
   --fs-96: 6rem;
-  --fs-160: 10rem;
 
   --lh-tight:    1.05;
   --lh-snug:     1.2;
@@ -114,7 +100,6 @@
 
   --tracking-wide:  0.18em;   /* spaced caps eyebrow labels */
   --tracking-mid:   0.06em;
-  --tracking-tight: -0.02em;
   --tracking-display: -0.015em;
 
   /* Semantic type */
@@ -123,7 +108,6 @@
   --h1:         clamp(2.25rem, 5vw, 3.75rem);
   --h2:         clamp(1.75rem, 3.6vw, 2.75rem);
   --h3:         clamp(1.25rem, 2.4vw, 1.625rem);
-  --h-eyebrow:  var(--fs-12);
 
   /* ---------- Spacing (8px base) ------------------------------ */
   --sp-1:  4px;
@@ -137,8 +121,6 @@
   --sp-12: 48px;
   --sp-16: 64px;
   --sp-20: 80px;
-  --sp-24: 96px;
-  --sp-32: 128px;
 
   /* Page rhythm */
   --gutter:       clamp(20px, 4vw, 48px);
@@ -155,10 +137,8 @@
   --radius-pill: 999px;
 
   /* ---------- Elevation --------------------------------------- */
-  --shadow-soft:  0 1px 2px rgba(31, 31, 27, 0.04), 0 2px 6px rgba(31, 31, 27, 0.04);
   --shadow-card:  0 2px 8px rgba(31, 31, 27, 0.06), 0 12px 32px rgba(31, 31, 27, 0.08);
   --shadow-hover: 0 6px 16px rgba(31, 31, 27, 0.10), 0 24px 56px rgba(31, 31, 27, 0.14);
-  --shadow-inset: inset 0 0 0 1px rgba(31, 31, 27, 0.08);
 
   /* ---------- Motion ------------------------------------------ */
   --ease:         cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -168,7 +148,6 @@
   --dur:          280ms;
   --dur-slow:     520ms;
   --transition:        all var(--dur) var(--ease);
-  --transition-fast:   all var(--dur-fast) var(--ease);
 
   /* ---------- Layout primitives ------------------------------- */
   --banner-h:     68px;
@@ -176,7 +155,6 @@
   --nav-h-scroll: 64px;
   --z-nav:    50;
   --z-overlay: 80;
-  --z-modal:  100;
 }
 
 /* ============================================================
