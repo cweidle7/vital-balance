@@ -38,7 +38,7 @@
   padding: calc(var(--nav-h) + var(--banner-h) + var(--sp-4)) var(--gutter) var(--sp-16);
 }
 @media (min-width: 720px) {
-  .hero__inner { padding-inline: 0; padding-bottom: var(--sp-20); }
+  .hero__inner { padding-inline: 0; padding-bottom: var(--sp-10); }
 }
 .hero__pulse-wrap {
   position: absolute;
