@@ -56,7 +56,7 @@
       <div class="container">
         <p class="eyebrow">Place Your Order</p>
         <h2>Complete &amp; Submit Your Order</h2>
-        <p class="order-intro__sub">Fill out the form below and click <strong>Submit Order</strong> — we'll receive it directly at <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a>. You can also <a href="#" onclick="window.print(); return false;">download the PDF version</a> to email us directly.</p>
+        <p class="order-intro__sub">Fill out the form below and click <strong>Submit Order</strong> and we'll receive it directly at <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a>. You can also <a href="#" onclick="window.print(); return false;">download the PDF version</a> to email us directly.</p>
       </div>
     </section>
 
@@ -89,7 +89,7 @@
                 </div>
 
                 <!-- VB-CB Umbilical Cord Blood -->
-                <div class="order-product-table__group-label">VB-CB™ — Umbilical Cord Blood</div>
+                <div class="order-product-table__group-label">VB-CB™: Umbilical Cord Blood</div>
                 <div class="order-product-table__row">
                   <span class="order-product-table__name">VB-CB™</span>
                   <span class="order-product-table__size">0.50 mL</span>
@@ -107,7 +107,7 @@
                 </div>
 
                 <!-- VB-WJ Wharton's Jelly -->
-                <div class="order-product-table__group-label">VB-WJ™ — Wharton's Jelly</div>
+                <div class="order-product-table__group-label">VB-WJ™: Wharton's Jelly</div>
                 <div class="order-product-table__row">
                   <span class="order-product-table__name">VB-WJ™</span>
                   <span class="order-product-table__size">1.0 mL</span>
@@ -120,7 +120,7 @@
                 </div>
 
                 <!-- VB-XO Exosomes -->
-                <div class="order-product-table__group-label">VB-XO™ — Exosomes</div>
+                <div class="order-product-table__group-label">VB-XO™: Exosomes</div>
                 <div class="order-product-table__row">
                   <span class="order-product-table__name">VB-XO™</span>
                   <span class="order-product-table__size">1.0 mL</span>
@@ -133,7 +133,7 @@
                 </div>
 
                 <!-- VB-ECM Amniotic ECM -->
-                <div class="order-product-table__group-label">VB-ECM™ — Amniotic ECM</div>
+                <div class="order-product-table__group-label">VB-ECM™: Amniotic ECM</div>
                 <div class="order-product-table__row">
                   <span class="order-product-table__name">VB-ECM™</span>
                   <span class="order-product-table__size">1.0 mL</span>
@@ -232,18 +232,26 @@
                 <div class="order-delivery-methods">
                   <label class="order-delivery-method">
                     <input type="radio" name="delivery_method" value="pickup" required />
-                    <span>Pickup<br><small style="font-weight:400;color:var(--muted);">No shipping fee</small></span>
+                    <div class="order-delivery-method__text">
+                      <span class="order-delivery-method__name">Pickup</span>
+                      <span class="order-delivery-method__fee">No shipping fee</span>
+                    </div>
                   </label>
                   <label class="order-delivery-method">
                     <input type="radio" name="delivery_method" value="local_delivery" />
-                    <span>Local / Same-Day<br><small style="font-weight:400;color:var(--muted);">$35 — select areas</small></span>
+                    <div class="order-delivery-method__text">
+                      <span class="order-delivery-method__name">Local / Same-Day</span>
+                      <span class="order-delivery-method__fee">$35, select areas</span>
+                    </div>
                   </label>
                   <label class="order-delivery-method">
                     <input type="radio" name="delivery_method" value="overnight_shipping" />
-                    <span>Overnight Shipping<br><small style="font-weight:400;color:var(--muted);">$150 — by 10:30am</small></span>
+                    <div class="order-delivery-method__text">
+                      <span class="order-delivery-method__name">Overnight Shipping</span>
+                      <span class="order-delivery-method__fee">$150, by 10:30am</span>
+                    </div>
                   </label>
                 </div>
-                <p style="font-size:var(--fs-13);color:var(--muted);margin-top:var(--sp-3);">All orders include cold-chain packaging &amp; dry ice. Handling fee: <strong>$15</strong> per order. Chain-of-custody documentation included.</p>
               </div>
               <div class="order-grid">
                 <div class="order-field">
@@ -346,7 +354,7 @@
     function handleOrderSubmit(e) {
       e.preventDefault();
       const btn = document.querySelector('#orderForm .btn--primary');
-      btn.textContent = 'Order Submitted — We\'ll be in touch!';
+      btn.textContent = 'Order Submitted. We\'ll be in touch!';
       btn.disabled = true;
       btn.style.background = 'var(--sage-dark)';
     }
