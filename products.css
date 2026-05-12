@@ -1,0 +1,90 @@
+/* ============================================================
+   Vital Balance — Products Page Styles
+   ============================================================ */
+
+/* ---------- PAGE HERO ------------------------------------- */
+.products-hero {
+  margin-top: var(--nav-h);
+  background:
+    radial-gradient(60% 50% at 70% 30%, rgba(3, 89, 161, 0.3) 0%, transparent 60%),
+    linear-gradient(165deg, #024A8A 0%, #012D57 50%, #011E3F 100%);
+  color: var(--cream);
+  padding-block: var(--sp-20) var(--sp-16);
+  text-align: center;
+}
+.products-hero .eyebrow { margin-bottom: var(--sp-4); }
+.products-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--cream);
+  margin: 0;
+}
+
+/* ---------- PRODUCTS SECTION ------------------------------ */
+.products-section {
+  padding-block: var(--section-y);
+  background: var(--cream-dark);
+}
+.products-section__head {
+  text-align: center;
+  margin-bottom: var(--sp-16);
+}
+.products-section__head .eyebrow { margin-bottom: var(--sp-3); }
+.products-section__head h2 { margin-top: var(--sp-2); }
+
+/* ---------- PRODUCT CARDS --------------------------------- */
+.product-allograft-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-8);
+}
+@media (min-width: 720px) {
+  .product-allograft-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.product-allograft-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+.product-allograft-card__header {
+  background: #012D57;
+  padding: var(--sp-8) var(--sp-8) var(--sp-6);
+}
+.product-allograft-card__tag {
+  font-family: var(--font-body);
+  font-size: var(--fs-11, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: var(--sp-3);
+}
+.product-allograft-card__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+.product-allograft-card__body {
+  background: var(--white);
+  padding: var(--sp-8);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+.product-allograft-card__desc {
+  font-size: var(--fs-15);
+  color: var(--muted);
+  line-height: var(--lh-relaxed);
+}
+.product-allograft-card__action {
+  margin-top: auto;
+}

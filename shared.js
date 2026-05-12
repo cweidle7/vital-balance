@@ -3,27 +3,6 @@
    ============================================================ */
 
 (function () {
-  // Announcement banner dismiss
-  const banner = document.querySelector(".announcement-banner");
-  const bannerClose = document.querySelector(".announcement-banner__close");
-  if (banner && bannerClose) {
-    bannerClose.addEventListener("click", () => {
-      banner.classList.add("is-hidden");
-      document.documentElement.style.setProperty("--banner-h", "0px");
-    });
-  }
-
-  // Sticky nav: solidify after scroll past 24px (small intent threshold)
-  const nav = document.querySelector(".nav");
-  if (nav) {
-    const onScroll = () => {
-      if (window.scrollY > 24) nav.classList.add("is-scrolled");
-      else nav.classList.remove("is-scrolled");
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
-
   // Hamburger overlay
   const ham = document.querySelector(".nav__hamburger");
   const overlay = document.querySelector(".nav-overlay");

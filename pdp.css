@@ -2,7 +2,7 @@
    Vital Balance — PDP styles
    ============================================================ */
 
-.pdp { padding-top: calc(var(--nav-h) + var(--banner-h)); }
+.pdp { padding-top: var(--nav-h); }
 
 /* Breadcrumb */
 .pdp-crumbs {

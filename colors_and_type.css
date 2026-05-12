@@ -149,7 +149,6 @@
   --transition:        all var(--dur) var(--ease);
 
   /* ---------- Layout primitives ------------------------------- */
-  --banner-h:     68px;
   --nav-h:        72px;
   --nav-h-scroll: 64px;
   --z-nav:    50;
