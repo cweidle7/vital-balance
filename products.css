@@ -20,8 +20,8 @@
   grid-template-columns: 1fr;
   gap: var(--sp-8);
 }
-@media (min-width: 720px) {
-  .product-allograft-grid { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 640px) {
+  .product-allograft-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .product-allograft-card {
@@ -89,6 +89,22 @@
   border-radius: 50%;
   background: var(--brown);
   flex-shrink: 0;
+}
+.product-allograft-card__admin {
+  font-size: var(--fs-12);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--sage-dark);
+}
+.product-allograft-card__admin span {
+  display: block;
+  font-size: var(--fs-11, 0.6875rem);
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: var(--sp-1);
 }
 .product-allograft-card__disclaimer {
   font-size: var(--fs-11, 0.6875rem);
