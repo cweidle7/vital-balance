@@ -20,7 +20,7 @@
       <a class="nav__link" href="vitalbalance-about.html">About</a>
       <a class="nav__link" href="vitalbalance-products.html">Products</a>
       <a class="nav__link" href="#">Services</a>
-      <a class="nav__link" href="#">Contact</a>
+      <a class="nav__link" href="#contact">Contact</a>
     </div>
     <div class="nav__right">
       <a class="nav__cta" href="#">Get Started</a>
@@ -37,7 +37,7 @@
     <a class="nav-overlay__link" href="vitalbalance-about.html">About</a>
     <a class="nav-overlay__link" href="vitalbalance-products.html">Products</a>
     <a class="nav-overlay__link" href="#">Services</a>
-    <a class="nav-overlay__link" href="#">Contact</a>
+    <a class="nav-overlay__link" href="#contact">Contact</a>
   </div>
 
   <main>
@@ -186,52 +186,103 @@
 
   </main>
 
-  <!-- ============== FOOTER (shared) ============== -->
+  <!-- ============== CONTACT FORM ============== -->
+  <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-section__grid">
+        <div class="contact-info">
+          <p class="eyebrow eyebrow--cream contact-info__eyebrow">Get In Touch</p>
+          <h2 id="contact-heading" class="contact-info__title">Contact Us</h2>
+          <p class="contact-info__desc">If you are a practitioner or clinic owner eager to discover how Vital Balance can enhance your practice, fill out the form and an account executive will reach out within 24 hours.</p>
+          <div class="contact-info__detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Lehi, Utah
+          </div>
+          <div class="contact-info__detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@vitalbalance.bio
+          </div>
+          <div class="contact-info__socials">
+            <a class="contact-info__social" href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a class="contact-info__social" href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zm0 6h4v10H4zm6 0h4v2c1-2 4-3 6-1s2 4 2 6v3h-4v-4c0-1-.4-2-2-2s-2 1-2 2v4h-4z"/></svg></a>
+          </div>
+        </div>
+        <div class="contact-form-card">
+          <p class="contact-form-card__intro">Thank you for your interest in Vital Balance. Fill out the form below and an account executive will reach out within 24 hours to provide assistance and answer any questions you may have.</p>
+          <form onsubmit="event.preventDefault(); this.querySelector('.contact-form__submit').textContent='Submitted — We\'ll be in touch!'">
+            <div class="contact-form__row">
+              <div class="contact-form__field">
+                <label for="cf-first">First Name *</label>
+                <input type="text" id="cf-first" name="first_name" required placeholder="Jane" />
+              </div>
+              <div class="contact-form__field">
+                <label for="cf-last">Last Name *</label>
+                <input type="text" id="cf-last" name="last_name" required placeholder="Smith" />
+              </div>
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-clinic">Clinic Name *</label>
+              <input type="text" id="cf-clinic" name="clinic_name" required placeholder="Advanced Regenerative Clinic" />
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-location">Clinic Location (City &amp; State) *</label>
+              <input type="text" id="cf-location" name="clinic_location" required placeholder="Los Angeles, CA" />
+            </div>
+            <div class="contact-form__row">
+              <div class="contact-form__field">
+                <label for="cf-email">Email *</label>
+                <input type="email" id="cf-email" name="email" required placeholder="jane@clinic.com" />
+              </div>
+              <div class="contact-form__field">
+                <label for="cf-phone">Phone</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="(555) 000-0000" />
+              </div>
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" placeholder="Tell us about your clinic and how we can help..."></textarea>
+            </div>
+            <button type="submit" class="contact-form__submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div>
           <p class="footer__brand-tag">Vital Balance</p>
-          <p class="footer__blurb">Regenerative wellness, formulated alongside the practitioners who use it. Based in the Pacific Northwest. Shipping across the United States.</p>
+          <p class="footer__blurb">Premium regenerative medicine products for healthcare providers and clinics. Bioethically sourced, rigorously tested.</p>
           <div class="footer__socials">
             <a class="footer__social" href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
-            <a class="footer__social" href="#" aria-label="Substack"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4h14v3H5zM5 9h14v3H5zM5 14l7 6 7-6H5z"/></svg></a>
             <a class="footer__social" href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zm0 6h4v10H4zm6 0h4v2c1-2 4-3 6-1s2 4 2 6v3h-4v-4c0-1-.4-2-2-2s-2 1-2 2v4h-4z"/></svg></a>
           </div>
         </div>
         <div class="footer__col">
-          <h4>Shop</h4>
+          <h4>Pages</h4>
           <ul class="footer__list">
-            <li><a href="vitalbalance-products.html">All Products</a></li>
-            <li><a href="#">Adaptogens</a></li>
-            <li><a href="#">Longevity</a></li>
-            <li><a href="#">Cellular</a></li>
-            <li><a href="#">Subscriptions</a></li>
+            <li><a href="vitalbalance-home.html">Home</a></li>
+            <li><a href="vitalbalance-about.html">About</a></li>
+            <li><a href="vitalbalance-products.html">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4>Learn</h4>
+          <h4>Contact</h4>
           <ul class="footer__list">
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Sourcing</a></li>
-            <li><a href="#">Practitioners</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li style="color: var(--fg-on-dark-mute); font-size: var(--fs-14);">Lehi, Utah</li>
+            <li><a href="mailto:info@vitalbalance.bio">info@vitalbalance.bio</a></li>
           </ul>
-        </div>
-        <div class="footer__col footer__newsletter">
-          <h4>Letters from the practice</h4>
-          <p style="font-size: var(--fs-14); color: var(--fg-on-dark-mute); margin-bottom: var(--sp-4);">10% off your first order, plus seasonal protocols.</p>
-          <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Welcomed';">
-            <input type="email" placeholder="your@email.com" aria-label="Email" />
-            <button type="submit">Join</button>
-          </form>
         </div>
       </div>
       <div class="footer__bottom">
         <span>© 2026 Vital Balance, Inc.</span>
         <div class="footer__certs">
-          <span>USDA Organic</span><span>NSF Certified</span><span>Climate Neutral</span>
+          <span>HCT/P Compliant</span><span>Bioethically Sourced</span><span>Third-Party Tested</span>
         </div>
       </div>
     </div>
