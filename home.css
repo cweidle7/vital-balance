@@ -199,6 +199,99 @@
 .process__step p { color: var(--muted); font-size: var(--fs-15); max-width: 32ch; }
 
 
+/* ---------- HOME ABOUT ----------------------------------- */
+.home-about {
+  padding-block: var(--section-y);
+}
+.home-about__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-12);
+  align-items: center;
+}
+@media (min-width: 880px) {
+  .home-about__grid { grid-template-columns: 1fr 1fr; gap: var(--sp-16); }
+}
+.home-about__copy .eyebrow { margin-bottom: var(--sp-3); }
+.home-about__copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  margin-bottom: var(--sp-4);
+}
+.home-about__rule {
+  width: 48px;
+  height: 3px;
+  background: var(--brown);
+  border-radius: 2px;
+  margin-bottom: var(--sp-6);
+}
+.home-about__copy p {
+  color: var(--muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-5);
+}
+.home-about__copy p:last-of-type { margin-bottom: 0; }
+.home-about__copy .btn { margin-top: var(--sp-6); }
+.home-about__promise {
+  background: linear-gradient(150deg, #024A8A 0%, #012D57 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-10) var(--sp-8);
+  color: var(--cream);
+}
+.home-about__promise-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-24);
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: var(--sp-8);
+}
+.home-about__promise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+.home-about__promise-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-15);
+  color: rgba(255, 255, 255, 0.88);
+}
+.home-about__check {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--brown);
+}
+
+/* ---------- HOME VALUES (Discover The Vital Balance Difference) */
+.home-values {
+  padding-block: var(--section-y);
+  background: var(--cream-dark);
+}
+.home-values__head {
+  text-align: center;
+  margin-bottom: var(--sp-12);
+}
+.home-values__head .eyebrow { margin-bottom: var(--sp-3); }
+.home-values__head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+}
+.home-values__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+}
+@media (min-width: 720px) {
+  .home-values__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 /* ---------- REVIEWS -------------------------------------- */
 .reviews { padding-block: var(--section-y); }
 .reviews__callout {
