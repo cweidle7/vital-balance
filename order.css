@@ -1,0 +1,290 @@
+/* ============================================================
+   Vital Balance — Order Form Page Styles
+   ============================================================ */
+
+/* ---------- INTRO ----------------------------------------- */
+.order-intro {
+  padding-block: var(--sp-16) var(--sp-10);
+  text-align: center;
+  background: var(--white);
+}
+.order-intro .eyebrow { margin-bottom: var(--sp-3); }
+.order-intro h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  margin-bottom: var(--sp-4);
+}
+.order-intro__sub {
+  font-size: var(--fs-16);
+  color: var(--muted);
+  line-height: var(--lh-relaxed);
+  max-width: 52ch;
+  margin-inline: auto;
+}
+.order-intro__sub a { color: var(--sage); font-weight: 500; }
+.order-intro__sub a:hover { color: var(--brown); }
+
+/* ---------- DEADLINE NOTICE ------------------------------- */
+.order-deadline {
+  background: var(--white);
+  padding-bottom: var(--sp-8);
+}
+.order-deadline__inner {
+  border-left: 3px solid var(--brown);
+  background: #FEF2F2;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: var(--sp-4) var(--sp-5);
+  font-size: var(--fs-14);
+  color: var(--charcoal);
+  line-height: var(--lh-relaxed);
+  max-width: 860px;
+  margin-inline: auto;
+}
+.order-deadline__inner strong { color: var(--brown); }
+
+/* ---------- FORM WRAPPER ---------------------------------- */
+.order-body {
+  background: var(--cream-dark);
+  padding-block: var(--sp-6) var(--section-y);
+}
+.order-form {
+  max-width: 860px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* ---------- FORM SECTION CARD ----------------------------- */
+.order-section {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(31,31,27,0.06);
+}
+.order-section__head {
+  background: #012D57;
+  padding: var(--sp-4) var(--sp-6);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.order-section__num {
+  width: 24px; height: 24px;
+  background: var(--brown);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--fs-12);
+  font-weight: 700;
+  color: var(--white);
+  font-family: var(--font-body);
+  flex-shrink: 0;
+}
+.order-section__title {
+  font-family: var(--font-body);
+  font-size: var(--fs-13);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--cream);
+  margin: 0;
+}
+.order-section__body {
+  padding: var(--sp-6);
+}
+
+/* ---------- PRODUCT TABLE --------------------------------- */
+.order-product-table {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: var(--sp-6);
+}
+.order-product-table__header {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px;
+  gap: var(--sp-4);
+  background: var(--cream-dark);
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-12);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--sage-dark);
+}
+.order-product-table__group-label {
+  grid-column: 1 / -1;
+  background: #EEF3F9;
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-12);
+  font-weight: 700;
+  letter-spacing: var(--tracking-mid);
+  text-transform: uppercase;
+  color: var(--sage);
+  border-top: 1px solid var(--border);
+}
+.order-product-table__row {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px;
+  gap: var(--sp-4);
+  align-items: center;
+  padding: var(--sp-3) var(--sp-4);
+  border-top: 1px solid var(--border);
+}
+.order-product-table__row:hover { background: #FAFBFD; }
+.order-product-table__name {
+  font-size: var(--fs-14);
+  color: var(--charcoal);
+}
+.order-product-table__size {
+  font-size: var(--fs-14);
+  color: var(--muted);
+}
+.order-product-table__qty {
+  font-family: var(--font-body);
+  font-size: var(--fs-14);
+  color: var(--charcoal);
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-2) var(--sp-3);
+  width: 80px;
+  text-align: center;
+  transition: border-color var(--dur) var(--ease);
+}
+.order-product-table__qty:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(3,89,161,0.1);
+  background: var(--white);
+}
+@media (max-width: 540px) {
+  .order-product-table__header,
+  .order-product-table__row { grid-template-columns: 1fr 70px 70px; gap: var(--sp-2); }
+}
+
+/* ---------- DMSO ROW -------------------------------------- */
+.order-dmso {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  font-size: var(--fs-14);
+  color: var(--charcoal);
+}
+.order-dmso__radios { display: flex; gap: var(--sp-5); }
+.order-dmso label { display: flex; align-items: center; gap: var(--sp-2); cursor: pointer; }
+.order-dmso em { color: var(--muted); font-style: italic; font-size: var(--fs-13); }
+
+/* ---------- SHARED FORM FIELDS (inside order sections) ---- */
+.order-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+@media (max-width: 580px) { .order-grid { grid-template-columns: 1fr; } }
+.order-grid--3 { grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 680px) { .order-grid--3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 440px) { .order-grid--3 { grid-template-columns: 1fr; } }
+.order-grid--full { grid-column: 1 / -1; }
+
+.order-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+.order-field:last-child { margin-bottom: 0; }
+.order-field label {
+  font-size: var(--fs-12);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--sage-dark);
+}
+.order-field input,
+.order-field textarea,
+.order-field select {
+  font-family: var(--font-body);
+  font-size: var(--fs-15);
+  color: var(--charcoal);
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--sp-3) var(--sp-4);
+  width: 100%;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.order-field input:focus,
+.order-field textarea:focus,
+.order-field select:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(3,89,161,0.1);
+  background: var(--white);
+}
+.order-field textarea { min-height: 90px; resize: vertical; }
+
+/* ---------- DELIVERY METHODS ----------------------------- */
+.order-delivery-methods {
+  display: flex;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-6);
+}
+.order-delivery-method {
+  flex: 1;
+  min-width: 130px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--sp-4) var(--sp-5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-14);
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.order-delivery-method:has(input:checked) {
+  border-color: var(--sage);
+  background: #EEF3F9;
+  color: var(--sage-dark);
+}
+.order-delivery-method input { accent-color: var(--sage); }
+
+/* ---------- FORM ACTIONS ---------------------------------- */
+.order-actions {
+  max-width: 860px;
+  margin-inline: auto;
+  padding: var(--sp-8) 0 var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+.order-actions__or {
+  font-size: var(--fs-14);
+  color: var(--muted);
+}
+.order-actions__email {
+  font-size: var(--fs-14);
+  color: var(--muted);
+}
+.order-actions__email a { color: var(--sage); font-weight: 500; }
+
+/* ---------- PRINT STYLES ---------------------------------- */
+@media print {
+  .nav, .nav-overlay, .page-hero,
+  .order-intro, .order-deadline,
+  .order-actions, .contact-section, .footer { display: none !important; }
+  body { background: white; font-size: 12px; }
+  .order-body { background: white; padding: 0; }
+  .order-form { gap: 16px; max-width: 100%; }
+  .order-section { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+  .order-section__head { background: #012D57 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .order-product-table__header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .order-product-table__group-label { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

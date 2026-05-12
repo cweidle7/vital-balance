@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Form — Vital Balance</title>
+  <meta name="description" content="Place a product order with Vital Balance. Submit your order online or download the form to email directly." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="components.css" />
+  <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+
+  <!-- ============== NAV ============== -->
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__brand" href="vitalbalance-home.html">
+      <img class="nav__logo" src="asset/vital_balance_logo_no_bg.jpg" alt="Vital Balance" />
+    </a>
+    <div class="nav__center">
+      <a class="nav__link" href="vitalbalance-about.html">About</a>
+      <a class="nav__link" href="vitalbalance-products.html">Products</a>
+      <a class="nav__link" href="#">Services</a>
+      <a class="nav__link" href="#contact">Contact</a>
+    </div>
+    <div class="nav__right">
+      <a class="nav__cta" href="vitalbalance-order.html" aria-current="page">Order Form</a>
+      <button class="nav__hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay" aria-hidden="true">
+    <button class="nav-overlay__close" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+    <a class="nav-overlay__link" href="vitalbalance-about.html">About</a>
+    <a class="nav-overlay__link" href="vitalbalance-products.html">Products</a>
+    <a class="nav-overlay__link" href="#">Services</a>
+    <a class="nav-overlay__link" href="vitalbalance-order.html">Order Form</a>
+    <a class="nav-overlay__link" href="#contact">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- ============== PAGE HERO ============== -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow eyebrow--cream">Vital Balance</p>
+        <h1>Product Order Form</h1>
+      </div>
+    </section>
+
+    <!-- ============== INTRO ============== -->
+    <section class="order-intro">
+      <div class="container">
+        <p class="eyebrow">Place Your Order</p>
+        <h2>Complete &amp; Submit Your Order</h2>
+        <p class="order-intro__sub">Fill out the form below and click <strong>Submit Order</strong> — we'll receive it directly at <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a>. You can also <a href="#" onclick="window.print(); return false;">download the PDF version</a> to email us directly.</p>
+      </div>
+    </section>
+
+    <!-- ============== DEADLINE NOTICE ============== -->
+    <section class="order-deadline">
+      <div class="container">
+        <div class="order-deadline__inner">
+          <strong>⏱ Order Deadlines:</strong> For overnight delivery, place orders by <strong>1:00pm MST</strong> the day before shipping. For same-day pickup or local delivery, place orders by <strong>1:00pm MST</strong> on the day needed.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FORM ============== -->
+    <section class="order-body">
+      <div class="container">
+        <form class="order-form" id="orderForm" onsubmit="handleOrderSubmit(event)">
+
+          <!-- 1. PRODUCT ORDER INFORMATION -->
+          <div class="order-section">
+            <div class="order-section__head">
+              <span class="order-section__num">1</span>
+              <h2 class="order-section__title">Product Order Information</h2>
+            </div>
+            <div class="order-section__body">
+              <div class="order-product-table">
+                <div class="order-product-table__header">
+                  <span>Product Description</span>
+                  <span>Unit Size</span>
+                  <span>Quantity</span>
+                </div>
+
+                <!-- VB CV Stem Cells -->
+                <div class="order-product-table__group-label">VB™ CV — Umbilical Cord Blood MSC (Stem Cells)</div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB™ CV – 5 Million</span>
+                  <span class="order-product-table__size">0.50 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="cv_5m" aria-label="VB CV 5 Million quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB™ CV – 10 Million</span>
+                  <span class="order-product-table__size">1.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="cv_10m" aria-label="VB CV 10 Million quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB™ CV – 20 Million</span>
+                  <span class="order-product-table__size">2.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="cv_20m" aria-label="VB CV 20 Million quantity" />
+                </div>
+
+                <!-- VB EV Exosomes -->
+                <div class="order-product-table__group-label">VB™ EV — Exosomes</div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB™ EV – 50 Billion</span>
+                  <span class="order-product-table__size">0.50 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="ev_50b" aria-label="VB EV 50 Billion quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB™ EV – 100 Billion</span>
+                  <span class="order-product-table__size">1.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="ev_100b" aria-label="VB EV 100 Billion quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB™ EV – 200 Billion</span>
+                  <span class="order-product-table__size">2.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="ev_200b" aria-label="VB EV 200 Billion quantity" />
+                </div>
+
+                <!-- VB JL Wharton's Jelly -->
+                <div class="order-product-table__group-label">VB™ JL — Wharton's Jelly</div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB™ JL – Standard</span>
+                  <span class="order-product-table__size">1.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="jl_1ml" aria-label="VB JL 1mL quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB™ JL – Large</span>
+                  <span class="order-product-table__size">2.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="jl_2ml" aria-label="VB JL 2mL quantity" />
+                </div>
+              </div>
+
+              <div class="order-dmso">
+                <span>Do you need a DMSO free product? <em>(Additional charge, subject to availability)</em></span>
+                <div class="order-dmso__radios">
+                  <label><input type="radio" name="dmso_free" value="yes" /> Yes</label>
+                  <label><input type="radio" name="dmso_free" value="no" checked /> No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. CUSTOMER INFORMATION -->
+          <div class="order-section">
+            <div class="order-section__head">
+              <span class="order-section__num">2</span>
+              <h2 class="order-section__title">Customer Information</h2>
+            </div>
+            <div class="order-section__body">
+              <div class="order-grid">
+                <div class="order-field">
+                  <label for="o-first">First Name *</label>
+                  <input type="text" id="o-first" name="first_name" required placeholder="Jane" />
+                </div>
+                <div class="order-field">
+                  <label for="o-last">Last Name *</label>
+                  <input type="text" id="o-last" name="last_name" required placeholder="Smith" />
+                </div>
+                <div class="order-field">
+                  <label for="o-phone">Phone Number *</label>
+                  <input type="tel" id="o-phone" name="phone" required placeholder="(555) 000-0000" />
+                </div>
+                <div class="order-field">
+                  <label for="o-email">Email Address *</label>
+                  <input type="email" id="o-email" name="email" required placeholder="jane@clinic.com" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. ACCOUNT INFORMATION -->
+          <div class="order-section">
+            <div class="order-section__head">
+              <span class="order-section__num">3</span>
+              <h2 class="order-section__title">Account Information</h2>
+            </div>
+            <div class="order-section__body">
+              <div class="order-grid">
+                <div class="order-field">
+                  <label for="o-org">Organization Name *</label>
+                  <input type="text" id="o-org" name="org_name" required placeholder="Advanced Regenerative Clinic" />
+                </div>
+                <div class="order-field">
+                  <label for="o-practitioner">Healthcare Practitioner Name</label>
+                  <input type="text" id="o-practitioner" name="practitioner_name" placeholder="Dr. Full Name" />
+                </div>
+                <div class="order-field">
+                  <label for="o-npi">NPI # *</label>
+                  <input type="text" id="o-npi" name="npi" required placeholder="1234567890" pattern="[0-9]{10}" title="10-digit NPI number" />
+                </div>
+                <div class="order-field">
+                  <label for="o-org-phone">Organization Phone</label>
+                  <input type="tel" id="o-org-phone" name="org_phone" placeholder="(555) 000-0000" />
+                </div>
+                <div class="order-field order-grid--full">
+                  <label for="o-address">Address</label>
+                  <input type="text" id="o-address" name="address" placeholder="Street address, city, state, zip" />
+                </div>
+                <div class="order-field order-grid--full">
+                  <label for="o-org-email">Organization Email</label>
+                  <input type="email" id="o-org-email" name="org_email" placeholder="orders@clinic.com" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. DELIVERY INFORMATION -->
+          <div class="order-section">
+            <div class="order-section__head">
+              <span class="order-section__num">4</span>
+              <h2 class="order-section__title">Pickup / Local Delivery / Overnight Shipping</h2>
+            </div>
+            <div class="order-section__body">
+              <div class="order-field">
+                <label>Delivery Method *</label>
+                <div class="order-delivery-methods">
+                  <label class="order-delivery-method">
+                    <input type="radio" name="delivery_method" value="pickup" required />
+                    Pickup
+                  </label>
+                  <label class="order-delivery-method">
+                    <input type="radio" name="delivery_method" value="local_delivery" />
+                    Local Delivery
+                  </label>
+                  <label class="order-delivery-method">
+                    <input type="radio" name="delivery_method" value="overnight_shipping" />
+                    Overnight Shipping
+                  </label>
+                </div>
+              </div>
+              <div class="order-grid">
+                <div class="order-field">
+                  <label for="o-date">Date Needed *</label>
+                  <input type="date" id="o-date" name="date_needed" required />
+                </div>
+                <div class="order-field">
+                  <label for="o-time">Time Needed (Pickup / Local Delivery)</label>
+                  <input type="time" id="o-time" name="time_needed" />
+                </div>
+                <div class="order-field">
+                  <label for="o-ship-org">Organization Name (Shipping)</label>
+                  <input type="text" id="o-ship-org" name="ship_org" placeholder="Organization name" />
+                </div>
+                <div class="order-field">
+                  <label for="o-ship-contact">Contact Name (Shipping)</label>
+                  <input type="text" id="o-ship-contact" name="ship_contact" placeholder="Contact name" />
+                </div>
+                <div class="order-field order-grid--full">
+                  <label for="o-ship-address">Delivery Address</label>
+                  <input type="text" id="o-ship-address" name="ship_address" placeholder="Full delivery address" />
+                </div>
+                <div class="order-field">
+                  <label for="o-ship-phone">Phone Number (Shipping)</label>
+                  <input type="tel" id="o-ship-phone" name="ship_phone" placeholder="(555) 000-0000" />
+                </div>
+                <div class="order-field">
+                  <label for="o-ship-email">Shipping Email</label>
+                  <input type="email" id="o-ship-email" name="ship_email" placeholder="shipping@clinic.com" />
+                </div>
+                <div class="order-field order-grid--full">
+                  <label for="o-ship-notes">Special Shipping Instructions</label>
+                  <textarea id="o-ship-notes" name="ship_notes" placeholder="e.g., specific packaging or handling requirements"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="order-actions">
+            <button type="submit" class="btn btn--primary btn--lg">Submit Order</button>
+            <button type="button" class="btn btn--ghost" onclick="window.print()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+              Download / Print Form
+            </button>
+            <span class="order-actions__or">·</span>
+            <span class="order-actions__email">or email completed form to <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a></span>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============== CONTACT FORM ============== -->
+  <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-section__grid">
+        <div class="contact-info">
+          <p class="eyebrow eyebrow--cream contact-info__eyebrow">Get In Touch</p>
+          <h2 id="contact-heading" class="contact-info__title">Contact Us</h2>
+          <p class="contact-info__desc">If you are a practitioner or clinic owner eager to discover how Vital Balance can enhance your practice, fill out the form and an account executive will reach out within 24 hours.</p>
+          <div class="contact-info__detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Lehi, Utah
+          </div>
+          <div class="contact-info__detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@vitalbalance.bio
+          </div>
+          <div class="contact-info__socials">
+            <a class="contact-info__social" href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a class="contact-info__social" href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zm0 6h4v10H4zm6 0h4v2c1-2 4-3 6-1s2 4 2 6v3h-4v-4c0-1-.4-2-2-2s-2 1-2 2v4h-4z"/></svg></a>
+          </div>
+        </div>
+        <div class="contact-form-card">
+          <p class="contact-form-card__intro">Thank you for your interest in Vital Balance. Fill out the form below and an account executive will reach out within 24 hours to provide assistance and answer any questions you may have.</p>
+          <form onsubmit="event.preventDefault(); this.querySelector('.contact-form__submit').textContent='Submitted — We\'ll be in touch!'">
+            <div class="contact-form__row">
+              <div class="contact-form__field">
+                <label for="cf-first">First Name *</label>
+                <input type="text" id="cf-first" name="first_name" required placeholder="Jane" />
+              </div>
+              <div class="contact-form__field">
+                <label for="cf-last">Last Name *</label>
+                <input type="text" id="cf-last" name="last_name" required placeholder="Smith" />
+              </div>
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-clinic">Clinic Name *</label>
+              <input type="text" id="cf-clinic" name="clinic_name" required placeholder="Advanced Regenerative Clinic" />
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-location">Clinic Location (City &amp; State) *</label>
+              <input type="text" id="cf-location" name="clinic_location" required placeholder="Los Angeles, CA" />
+            </div>
+            <div class="contact-form__row">
+              <div class="contact-form__field">
+                <label for="cf-email">Email *</label>
+                <input type="email" id="cf-email" name="email" required placeholder="jane@clinic.com" />
+              </div>
+              <div class="contact-form__field">
+                <label for="cf-phone">Phone</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="(555) 000-0000" />
+              </div>
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" placeholder="Tell us about your clinic and how we can help..."></textarea>
+            </div>
+            <button type="submit" class="contact-form__submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-tag">Vital Balance</p>
+          <p class="footer__blurb">Premium regenerative medicine products for healthcare providers and clinics. Bioethically sourced, rigorously tested.</p>
+          <div class="footer__socials">
+            <a class="footer__social" href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a class="footer__social" href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zm0 6h4v10H4zm6 0h4v2c1-2 4-3 6-1s2 4 2 6v3h-4v-4c0-1-.4-2-2-2s-2 1-2 2v4h-4z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Pages</h4>
+          <ul class="footer__list">
+            <li><a href="vitalbalance-home.html">Home</a></li>
+            <li><a href="vitalbalance-about.html">About</a></li>
+            <li><a href="vitalbalance-products.html">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="vitalbalance-order.html">Order Form</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul class="footer__list">
+            <li style="color: var(--fg-on-dark-mute); font-size: var(--fs-14);">Lehi, Utah</li>
+            <li><a href="mailto:info@vitalbalance.bio">info@vitalbalance.bio</a></li>
+            <li><a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Vital Balance, Inc.</span>
+        <div class="footer__certs">
+          <span>HCT/P Compliant</span><span>Bioethically Sourced</span><span>Third-Party Tested</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="shared.js"></script>
+  <script>
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const btn = document.querySelector('#orderForm .btn--primary');
+      btn.textContent = 'Order Submitted — We\'ll be in touch!';
+      btn.disabled = true;
+      btn.style.background = 'var(--sage-dark)';
+    }
+  </script>
+</body>
+</html>
