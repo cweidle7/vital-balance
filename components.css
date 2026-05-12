@@ -170,6 +170,21 @@
   width: 36px; height: 36px;
   display: inline-flex; align-items: center; justify-content: center;
 }
+.nav-overlay__cta {
+  display: block;
+  background: #012D57;
+  color: var(--white) !important;
+  font-family: var(--font-body);
+  font-size: var(--fs-15);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--sp-4) var(--sp-6);
+  border-radius: var(--radius);
+  margin-bottom: var(--sp-2);
+}
+.nav-overlay__cta:hover { background: var(--sage); }
 .nav-overlay__link {
   display: block;
   font-family: var(--font-display);
@@ -259,6 +274,8 @@
   margin-bottom: var(--sp-4);
 }
 .contact-info__detail svg { flex-shrink: 0; color: var(--brown); }
+.contact-info__detail a { color: rgba(255,255,255,0.9); text-decoration: underline; text-underline-offset: 2px; }
+.contact-info__detail a:hover { color: var(--white); }
 .contact-info__socials {
   display: flex;
   gap: var(--sp-3);
