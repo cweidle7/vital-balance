@@ -672,6 +672,21 @@
   margin: 0;
 }
 
+/* ---------- SCROLL REVEAL --------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* ---------- VALUE CARD (shared: about + home) ------------- */
 .value-card {
   background: var(--white);

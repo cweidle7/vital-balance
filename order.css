@@ -213,7 +213,6 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: var(--sp-3) var(--sp-4);
-  width: 100%;
   transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .order-field input:focus,
@@ -243,17 +242,33 @@
   display: flex;
   align-items: center;
   gap: var(--sp-3);
-  font-size: var(--fs-14);
-  font-weight: 500;
-  color: var(--charcoal);
   transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
 }
 .order-delivery-method:has(input:checked) {
   border-color: var(--sage);
   background: #EEF3F9;
-  color: var(--sage-dark);
 }
-.order-delivery-method input { accent-color: var(--sage); }
+.order-delivery-method:has(input:checked) .order-delivery-method__name { color: var(--sage-dark); }
+.order-delivery-method input { accent-color: var(--sage); flex-shrink: 0; }
+.order-delivery-method__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.order-delivery-method__name {
+  font-size: var(--fs-14);
+  font-weight: 600;
+  color: var(--charcoal);
+  text-transform: none;
+  letter-spacing: normal;
+}
+.order-delivery-method__fee {
+  font-size: var(--fs-12);
+  font-weight: 400;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: normal;
+}
 
 /* ---------- FORM ACTIONS ---------------------------------- */
 .order-actions {
