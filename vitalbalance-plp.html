@@ -1104,7 +1104,7 @@
       card.addEventListener("click", e => goToPDP(e));
       card.setAttribute("role", "button");
       card.setAttribute("tabindex", "0");
-      card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") goToPDP(e); });
+      card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goToPDP(e); } });
     });
 
     /* ── HCT/P order form submit ── */

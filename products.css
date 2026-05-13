@@ -37,7 +37,7 @@
 }
 .product-allograft-card__tag {
   font-family: var(--font-body);
-  font-size: var(--fs-11, 0.6875rem);
+  font-size: var(--fs-11);
   font-weight: 600;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
@@ -99,7 +99,7 @@
 }
 .product-allograft-card__admin span {
   display: block;
-  font-size: var(--fs-11, 0.6875rem);
+  font-size: var(--fs-11);
   color: var(--muted);
   font-weight: 400;
   letter-spacing: 0;
@@ -107,7 +107,7 @@
   margin-top: var(--sp-1);
 }
 .product-allograft-card__disclaimer {
-  font-size: var(--fs-11, 0.6875rem);
+  font-size: var(--fs-11);
   font-weight: 700;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
