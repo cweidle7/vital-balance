@@ -12,9 +12,11 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- ============== NAV ============== -->
   <nav class="nav" aria-label="Primary">
-    <a class="nav__brand" href="vitalbalance-home.html">
+    <a class="nav__brand" href="vitalbalance-home.html" aria-label="Home">
       <img class="nav__logo" src="asset/vital_balance_logo_no_bg.jpg" alt="Vital Balance" />
     </a>
     <div class="nav__center">
@@ -42,7 +44,7 @@
     <a class="nav-overlay__link" href="vitalbalance-home.html#contact">Contact</a>
   </div>
 
-  <main>
+  <main id="main-content">
 
     <!-- hero removed — users land directly on trust bar + product grid -->
 
@@ -57,6 +59,9 @@
         </div>
       </div>
     </section>
+
+    <!-- ============== PAGE HEADING ============== -->
+    <h1 class="sr-only">Products</h1>
 
     <!-- ============== TAB BAR ============== -->
     <div class="container">
@@ -716,13 +721,13 @@
                 </div>
               </div>
 
-              <div class="order-dmso">
-                <span>Do you need a DMSO free product? <em>(Additional charge, subject to availability)</em></span>
+              <fieldset class="order-dmso">
+                <legend>Do you need a DMSO free product? <em>(Additional charge, subject to availability)</em></legend>
                 <div class="order-dmso__radios">
                   <label><input type="radio" name="plp_dmso_free" value="yes" /> Yes</label>
                   <label><input type="radio" name="plp_dmso_free" value="no" checked /> No</label>
                 </div>
-              </div>
+              </fieldset>
             </div>
           </div>
 
@@ -797,8 +802,8 @@
               <h2 class="order-section__title">Pickup / Local Delivery / Overnight Shipping</h2>
             </div>
             <div class="order-section__body">
-              <div class="order-field">
-                <label>Delivery Method *</label>
+              <fieldset class="order-field">
+                <legend>Delivery Method *</legend>
                 <div class="order-delivery-methods">
                   <label class="order-delivery-method">
                     <input type="radio" name="plp_delivery_method" value="pickup" required />
@@ -822,7 +827,7 @@
                     </div>
                   </label>
                 </div>
-              </div>
+              </fieldset>
               <div class="order-grid">
                 <div class="order-field">
                   <label for="plp-o-date">Date Needed *</label>

@@ -3,6 +3,22 @@
    Buttons, Nav, Footer, Trust bar, Product card, Forms, Badges
    ============================================================ */
 
+/* Skip to main content */
+.skip-link {
+  position: absolute;
+  top: 0; left: 0;
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--brand-blue);
+  color: #fff;
+  font-size: var(--fs-14);
+  font-weight: 600;
+  z-index: 9999;
+  transform: translateY(-100%);
+  transition: transform 0.15s ease;
+  border-radius: 0 0 var(--radius) 0;
+}
+.skip-link:focus { transform: translateY(0); }
+
 /* ---------- BUTTONS ---------------------------------------- */
 .btn {
   display: inline-flex;

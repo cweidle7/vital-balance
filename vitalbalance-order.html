@@ -11,9 +11,11 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- ============== NAV ============== -->
   <nav class="nav" aria-label="Primary">
-    <a class="nav__brand" href="vitalbalance-home.html">
+    <a class="nav__brand" href="vitalbalance-home.html" aria-label="Home">
       <img class="nav__logo" src="asset/vital_balance_logo_no_bg.jpg" alt="Vital Balance" />
     </a>
     <div class="nav__center">
@@ -43,7 +45,7 @@
     <a class="nav-overlay__link" href="#contact">Contact</a>
   </div>
 
-  <main>
+  <main id="main-content">
 
     <!-- ============== PAGE HERO ============== -->
     <section class="page-hero">
@@ -58,7 +60,7 @@
       <div class="container">
         <p class="eyebrow">Place Your Order</p>
         <h2>Complete &amp; Submit Your Order</h2>
-        <p class="order-intro__sub">Fill out the form below and click <strong>Submit Order</strong> and we'll receive it directly at <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a>. You can also <a href="#" onclick="window.print(); return false;">download the PDF version</a> to email us directly.</p>
+        <p class="order-intro__sub">Fill out the form below and click <strong>Submit Order</strong> and we'll receive it directly at <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a>. You can also <a href="asset/stem-cell-order-form.pdf" download="Vital_Balance_Stem_Cell_Order_Form.pdf">download the PDF version</a> to email us directly.</p>
       </div>
     </section>
 
@@ -148,13 +150,13 @@
                 </div>
               </div>
 
-              <div class="order-dmso">
-                <span>Do you need a DMSO free product? <em>(Additional charge, subject to availability)</em></span>
+              <fieldset class="order-dmso">
+                <legend>Do you need a DMSO free product? <em>(Additional charge, subject to availability)</em></legend>
                 <div class="order-dmso__radios">
                   <label><input type="radio" name="dmso_free" value="yes" /> Yes</label>
                   <label><input type="radio" name="dmso_free" value="no" checked /> No</label>
                 </div>
-              </div>
+              </fieldset>
             </div>
           </div>
 
@@ -229,8 +231,8 @@
               <h2 class="order-section__title">Pickup / Local Delivery / Overnight Shipping</h2>
             </div>
             <div class="order-section__body">
-              <div class="order-field">
-                <label>Delivery Method *</label>
+              <fieldset class="order-field">
+                <legend>Delivery Method *</legend>
                 <div class="order-delivery-methods">
                   <label class="order-delivery-method">
                     <input type="radio" name="delivery_method" value="pickup" required />
@@ -254,7 +256,7 @@
                     </div>
                   </label>
                 </div>
-              </div>
+              </fieldset>
               <div class="order-grid">
                 <div class="order-field">
                   <label for="o-date">Date Needed *</label>

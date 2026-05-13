@@ -27,6 +27,9 @@
 @media (min-width: 880px) {
   .pdp-top { grid-template-columns: 60fr 40fr; gap: var(--sp-16); }
 }
+/* Prevent aspect-ratio feedback loop from expanding grid columns beyond 1fr */
+.pdp-media,
+.pdp-info { min-width: 0; }
 
 /* Left: media, sticky on desktop */
 .pdp-media { position: relative; }
