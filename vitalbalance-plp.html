@@ -20,7 +20,7 @@
     <div class="nav__center">
       <a class="nav__link" href="vitalbalance-about.html">About</a>
       <a class="nav__link" href="vitalbalance-plp.html" aria-current="page">Products</a>
-      <a class="nav__link" href="#contact">Contact</a>
+      <a class="nav__link" href="vitalbalance-home.html#contact">Contact</a>
     </div>
     <div class="nav__right">
       <a class="nav__cta" href="vitalbalance-plp.html">View Products</a>
@@ -39,7 +39,7 @@
     <a class="nav-overlay__cta" href="vitalbalance-plp.html">View Products</a>
     <a class="nav-overlay__link" href="vitalbalance-about.html">About</a>
     <a class="nav-overlay__link" href="vitalbalance-plp.html">Products</a>
-    <a class="nav-overlay__link" href="#contact">Contact</a>
+    <a class="nav-overlay__link" href="vitalbalance-home.html#contact">Contact</a>
   </div>
 
   <main>
@@ -877,77 +877,6 @@
 
   </main>
 
-  <!-- ============== CONTACT FORM ============== -->
-  <section class="contact-section" id="contact" aria-labelledby="plp-contact-heading">
-    <div class="container">
-      <div class="contact-section__grid">
-        <div class="contact-info reveal">
-          <p class="eyebrow eyebrow--cream contact-info__eyebrow">Get In Touch</p>
-          <h2 id="plp-contact-heading" class="contact-info__title">Contact Us</h2>
-          <p class="contact-info__desc">Whether you're a practitioner, clinic owner, or researcher — fill out the form and our team will reach out within 24 hours.</p>
-          <div class="contact-info__detail">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Salt Lake City, Utah
-          </div>
-          <div class="contact-info__detail">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-            (801) 949-8256
-          </div>
-          <div class="contact-info__detail">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>Orders: <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a></span>
-          </div>
-          <div class="contact-info__detail">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>Support: <a href="mailto:support@vitalbalance.bio">support@vitalbalance.bio</a></span>
-          </div>
-          <div class="contact-info__socials">
-            <a class="contact-info__social" href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
-            <a class="contact-info__social" href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zm0 6h4v10H4zm6 0h4v2c1-2 4-3 6-1s2 4 2 6v3h-4v-4c0-1-.4-2-2-2s-2 1-2 2v4h-4z"/></svg></a>
-          </div>
-        </div>
-        <div class="contact-form-card reveal">
-          <p class="contact-form-card__intro">Thank you for your interest in Vital Balance. Fill out the form below and an account executive will reach out within 24 hours.</p>
-          <form onsubmit="event.preventDefault(); this.querySelector('.contact-form__submit').textContent='Submitted. We\'ll be in touch!'">
-            <div class="contact-form__row">
-              <div class="contact-form__field">
-                <label for="plp-cf-first">First Name *</label>
-                <input type="text" id="plp-cf-first" name="first_name" required placeholder="Jane" />
-              </div>
-              <div class="contact-form__field">
-                <label for="plp-cf-last">Last Name *</label>
-                <input type="text" id="plp-cf-last" name="last_name" required placeholder="Smith" />
-              </div>
-            </div>
-            <div class="contact-form__field">
-              <label for="plp-cf-clinic">Clinic / Organization</label>
-              <input type="text" id="plp-cf-clinic" name="clinic_name" placeholder="Clinic or organization (optional)" />
-            </div>
-            <div class="contact-form__field">
-              <label for="plp-cf-location">Location (City &amp; State)</label>
-              <input type="text" id="plp-cf-location" name="clinic_location" placeholder="Los Angeles, CA" />
-            </div>
-            <div class="contact-form__row">
-              <div class="contact-form__field">
-                <label for="plp-cf-email">Email *</label>
-                <input type="email" id="plp-cf-email" name="email" required placeholder="jane@clinic.com" />
-              </div>
-              <div class="contact-form__field">
-                <label for="plp-cf-phone">Phone</label>
-                <input type="tel" id="plp-cf-phone" name="phone" placeholder="(555) 000-0000" />
-              </div>
-            </div>
-            <div class="contact-form__field">
-              <label for="plp-cf-message">Message</label>
-              <textarea id="plp-cf-message" name="message" placeholder="Tell us about your clinic and how we can help..."></textarea>
-            </div>
-            <button type="submit" class="contact-form__submit">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============== FOOTER ============== -->
   <footer class="footer">
     <div class="container">
@@ -967,7 +896,7 @@
             <li><a href="vitalbalance-about.html">About</a></li>
             <li><a href="vitalbalance-plp.html">Products</a></li>
             <li><a href="vitalbalance-order.html">HCT/P Order Form</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="vitalbalance-home.html#contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer__col">

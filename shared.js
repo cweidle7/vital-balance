@@ -17,18 +17,29 @@
   const ham = document.querySelector(".nav__hamburger");
   const overlay = document.querySelector(".nav-overlay");
   const overlayClose = document.querySelector(".nav-overlay__close");
+
+  function openOverlay() {
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    ham.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+  function closeOverlay() {
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    ham.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
   if (ham && overlay) {
-    ham.addEventListener("click", () => {
-      overlay.classList.add("is-open");
-      document.body.style.overflow = "hidden";
-    });
+    ham.addEventListener("click", openOverlay);
   }
   if (overlayClose && overlay) {
-    overlayClose.addEventListener("click", () => {
-      overlay.classList.remove("is-open");
-      document.body.style.overflow = "";
-    });
+    overlayClose.addEventListener("click", closeOverlay);
   }
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && overlay && overlay.classList.contains("is-open")) closeOverlay();
+  });
 
   // Wishlist toggle (top-right heart on product cards)
   document.querySelectorAll(".product-card__wishlist").forEach(btn => {
