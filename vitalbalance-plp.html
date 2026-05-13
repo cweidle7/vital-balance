@@ -84,12 +84,12 @@
 
         <!-- Filter pills -->
         <div class="peptide-filter-bar" role="group" aria-label="Filter by category" id="peptide-filters">
-          <button class="peptide-filter-pill is-active" data-filter="all">All Products</button>
-          <button class="peptide-filter-pill" data-filter="recovery">Recovery &amp; Regenerative</button>
-          <button class="peptide-filter-pill" data-filter="metabolic">Metabolic / GLP</button>
-          <button class="peptide-filter-pill" data-filter="longevity">Longevity &amp; Aesthetic</button>
-          <button class="peptide-filter-pill" data-filter="nad">NAD+</button>
-          <button class="peptide-filter-pill" data-filter="supplies">Supplies</button>
+          <button class="peptide-filter-pill is-active" data-filter="all" aria-pressed="true">All Products</button>
+          <button class="peptide-filter-pill" data-filter="recovery" aria-pressed="false">Recovery &amp; Regenerative</button>
+          <button class="peptide-filter-pill" data-filter="metabolic" aria-pressed="false">Metabolic / GLP</button>
+          <button class="peptide-filter-pill" data-filter="longevity" aria-pressed="false">Longevity &amp; Aesthetic</button>
+          <button class="peptide-filter-pill" data-filter="nad" aria-pressed="false">NAD+</button>
+          <button class="peptide-filter-pill" data-filter="supplies" aria-pressed="false">Supplies</button>
         </div>
 
         <!-- Unified product grid -->
@@ -1016,8 +1016,12 @@
     document.querySelectorAll(".peptide-filter-pill").forEach(pill => {
       pill.addEventListener("click", () => {
         const filter = pill.dataset.filter;
-        document.querySelectorAll(".peptide-filter-pill").forEach(p => p.classList.remove("is-active"));
+        document.querySelectorAll(".peptide-filter-pill").forEach(p => {
+          p.classList.remove("is-active");
+          p.setAttribute("aria-pressed", "false");
+        });
         pill.classList.add("is-active");
+        pill.setAttribute("aria-pressed", "true");
         document.querySelectorAll(".peptide-card").forEach(card => {
           if (filter === "all" || card.dataset.category === filter) {
             card.removeAttribute("hidden");

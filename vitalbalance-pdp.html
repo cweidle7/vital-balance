@@ -75,7 +75,7 @@
             </span>
             <span>4.9</span>
             <span>·</span>
-            <a href="#reviews">412 reviews</a>
+            <span>412 reviews</span>
           </div>
 
           <div class="pdp-info__price-row">
@@ -130,17 +130,17 @@
 
           <div class="pdp-tabs">
             <div class="pdp-tabs__list" role="tablist">
-              <button class="pdp-tabs__btn" role="tab" aria-selected="true" data-tab="desc">Description</button>
-              <button class="pdp-tabs__btn" role="tab" aria-selected="false" data-tab="ing">Ingredients</button>
-              <button class="pdp-tabs__btn" role="tab" aria-selected="false" data-tab="how">How to use</button>
-              <button class="pdp-tabs__btn" role="tab" aria-selected="false" data-tab="sci">The science</button>
+              <button class="pdp-tabs__btn" role="tab" aria-selected="true" aria-controls="pdp-panel-desc" id="pdp-tab-desc" data-tab="desc">Description</button>
+              <button class="pdp-tabs__btn" role="tab" aria-selected="false" aria-controls="pdp-panel-ing" id="pdp-tab-ing" data-tab="ing">Ingredients</button>
+              <button class="pdp-tabs__btn" role="tab" aria-selected="false" aria-controls="pdp-panel-how" id="pdp-tab-how" data-tab="how">How to use</button>
+              <button class="pdp-tabs__btn" role="tab" aria-selected="false" aria-controls="pdp-panel-sci" id="pdp-tab-sci" data-tab="sci">The science</button>
             </div>
 
-            <div class="pdp-tabs__panel" data-active="true" data-panel="desc">
+            <div class="pdp-tabs__panel" id="pdp-panel-desc" role="tabpanel" aria-labelledby="pdp-tab-desc" data-active="true" data-panel="desc">
               <p>NAD+ (Nicotinamide Adenine Dinucleotide) is a coenzyme central to mitochondrial energy metabolism and DNA biology. Levels decline with age. This formula pairs nicotinamide riboside (NR) with a synergistic methylation matrix, providing each cell with the precursors required for endogenous NAD+ biosynthesis.</p>
-              <p>Formulated alongside practicing clinicians, manufactured to pharmaceutical-grade standards, and bottled in glass for substrate integrity.</p>
+              <p>Formulated alongside practicing clinicians, manufactured to research-grade standards, and bottled in glass for substrate integrity.</p>
             </div>
-            <div class="pdp-tabs__panel" data-active="false" data-panel="ing">
+            <div class="pdp-tabs__panel" id="pdp-panel-ing" role="tabpanel" aria-labelledby="pdp-tab-ing" data-active="false" data-panel="ing">
               <ul>
                 <li><strong>Nicotinamide Riboside (NR)</strong> — 300 mg · the most studied NAD+ precursor.</li>
                 <li><strong>Trimethylglycine (TMG)</strong> — 250 mg · supports methylation balance.</li>
@@ -149,11 +149,11 @@
               </ul>
               <p>Vegetable cellulose capsule. No fillers, dyes, magnesium stearate, or synthetic flow agents.</p>
             </div>
-            <div class="pdp-tabs__panel" data-active="false" data-panel="how">
+            <div class="pdp-tabs__panel" id="pdp-panel-how" role="tabpanel" aria-labelledby="pdp-tab-how" data-active="false" data-panel="how">
               <p>Two capsules with breakfast or your first meal of the day. Best taken with healthy fats for optimal absorption.</p>
               <p>For practitioner-supervised protocols, dosing may scale to 4–6 capsules daily, divided across meals.</p>
             </div>
-            <div class="pdp-tabs__panel" data-active="false" data-panel="sci">
+            <div class="pdp-tabs__panel" id="pdp-panel-sci" role="tabpanel" aria-labelledby="pdp-tab-sci" data-active="false" data-panel="sci">
               <p>NAD+ depletion is widely cited in published literature as a marker of cellular aging. Dietary supplementation with NAD+ precursors is the subject of ongoing clinical research. Published peer-reviewed studies are available upon request. Clinical application is the sole judgment of the licensed treating provider.</p>
               <p>A Certificate of Analysis is provided with every batch — third-party verified purity and sterility.</p>
             </div>
@@ -271,7 +271,9 @@
     const ctaStack = document.getElementById("ctaStack");
     const obs = new IntersectionObserver(entries => {
       entries.forEach(en => {
-        stickybar.classList.toggle("is-visible", !en.isIntersecting);
+        const visible = !en.isIntersecting;
+        stickybar.classList.toggle("is-visible", visible);
+        stickybar.setAttribute("aria-hidden", visible ? "false" : "true");
       });
     }, { rootMargin: "-100px 0px 0px 0px" });
     obs.observe(ctaStack);
