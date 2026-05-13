@@ -152,6 +152,40 @@
 }
 @media (min-width: 880px) { .nav__hamburger { display: none; } }
 
+/* Cart icon button */
+.nav__cart {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: color var(--dur) var(--ease);
+  flex-shrink: 0;
+}
+.nav__cart:hover { color: var(--sage); }
+.nav__cart-badge {
+  position: absolute;
+  top: 2px; right: 2px;
+  min-width: 16px; height: 16px;
+  background: var(--brown);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0 3px;
+  pointer-events: none;
+}
+.nav__cart-badge[hidden] { display: none; }
+
 /* Mobile overlay menu */
 .nav-overlay {
   position: fixed; inset: 0;
@@ -418,6 +452,16 @@
   letter-spacing: var(--tracking-mid);
 }
 .footer__certs { display: flex; flex-wrap: wrap; gap: var(--sp-5); }
+
+.footer__disclaimer {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--border-on-dark);
+  font-size: var(--fs-12);
+  color: var(--fg-on-dark-mute);
+  line-height: var(--lh-relaxed);
+  max-width: 80ch;
+}
 
 /* ---------- PRODUCT CARD ---------------------------------- */
 /* Used on Home featured grid + PLP grid + PDP related row */

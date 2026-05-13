@@ -3,6 +3,16 @@
    ============================================================ */
 
 (function () {
+  // Cart badge — reads localStorage on every page load
+  (function initCartBadge() {
+    try {
+      const cart = JSON.parse(localStorage.getItem("vb_cart") || "[]");
+      const count = cart.reduce((n, i) => n + (i.qty || 1), 0);
+      const badge = document.getElementById("cart-badge");
+      if (badge) { badge.textContent = count; badge.hidden = count === 0; }
+    } catch (_) {}
+  })();
+
   // Hamburger overlay
   const ham = document.querySelector(".nav__hamburger");
   const overlay = document.querySelector(".nav-overlay");

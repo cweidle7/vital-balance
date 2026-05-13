@@ -3,186 +3,1121 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shop — Vital Balance</title>
+  <title>Products — Vital Balance</title>
+  <meta name="description" content="Research peptides and HCT/P allografts from Vital Balance. For use by licensed healthcare professionals only." />
   <link rel="stylesheet" href="colors_and_type.css" />
   <link rel="stylesheet" href="components.css" />
   <link rel="stylesheet" href="plp.css" />
+  <link rel="stylesheet" href="order.css" />
 </head>
 <body>
 
+  <!-- ============== NAV ============== -->
   <nav class="nav" aria-label="Primary">
     <a class="nav__brand" href="vitalbalance-home.html">
       <img class="nav__logo" src="asset/vital_balance_logo_no_bg.jpg" alt="Vital Balance" />
     </a>
     <div class="nav__center">
       <a class="nav__link" href="vitalbalance-about.html">About</a>
-      <a class="nav__link" href="vitalbalance-products.html">Products</a>
-      <a class="nav__link" href="#">Services</a>
-      <a class="nav__link" href="#">Contact</a>
+      <a class="nav__link" href="vitalbalance-plp.html" aria-current="page">Products</a>
+      <a class="nav__link" href="#contact">Contact</a>
     </div>
     <div class="nav__right">
-      <a class="nav__cta" href="#">Get Started</a>
+      <a class="nav__cta" href="vitalbalance-plp.html">View Products</a>
+      <button class="nav__cart" id="nav-cart-btn" aria-label="View cart" onclick="toggleCartDrawer()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav__cart-badge" id="cart-badge" hidden>0</span>
+      </button>
       <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <div class="nav-overlay">
-    <button class="nav-overlay__close" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  <div class="nav-overlay" aria-hidden="true">
+    <button class="nav-overlay__close" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+    <a class="nav-overlay__cta" href="vitalbalance-plp.html">View Products</a>
     <a class="nav-overlay__link" href="vitalbalance-about.html">About</a>
-    <a class="nav-overlay__link" href="vitalbalance-products.html">Products</a>
-    <a class="nav-overlay__link" href="#">Services</a>
-    <a class="nav-overlay__link" href="#">Contact</a>
+    <a class="nav-overlay__link" href="vitalbalance-plp.html">Products</a>
+    <a class="nav-overlay__link" href="#contact">Contact</a>
   </div>
 
   <main>
-    <section class="plp-hero" aria-labelledby="plp-h">
-      <div class="plp-hero__count" aria-hidden="true">24<small>Formulas</small></div>
-      <div class="plp-hero__inner">
-        <h1 id="plp-h" class="plp-hero__title">Every formula, made with care.</h1>
-      </div>
-    </section>
 
-    <section class="trust-bar">
+    <!-- hero removed — users land directly on trust bar + product grid -->
+
+    <!-- ============== TRUST BAR ============== -->
+    <section class="trust-bar" aria-label="Credentials" style="margin-top: var(--nav-h);">
       <div class="container">
         <div class="trust-bar__row">
-          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20" /></svg>Regeneratively Sourced</div>
+          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed Providers Only</div>
           <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Third-Party Tested</div>
-          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h13l3 4v6h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Free Shipping $75+</div>
-          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>30-Day Returns</div>
+          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 12 2 2 4-4"/></svg>COA Per Batch</div>
+          <div class="trust-bar__item"><svg class="trust-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>cGTP Compliant</div>
         </div>
       </div>
     </section>
 
-    <section class="plp-filters" aria-label="Filter products">
-      <div class="container">
-        <div class="plp-filters__row">
-          <div class="plp-filters__pills">
-            <button class="pill is-active">All <span class="pill__count">24</span></button>
-            <button class="pill">Adaptogen <span class="pill__count">8</span></button>
-            <button class="pill">Longevity <span class="pill__count">5</span></button>
-            <button class="pill">Cellular <span class="pill__count">4</span></button>
-            <button class="pill">Mineral <span class="pill__count">3</span></button>
-            <button class="pill">Immune <span class="pill__count">2</span></button>
-            <button class="pill">Cognitive <span class="pill__count">2</span></button>
-          </div>
-          <button class="plp-filters__sort" type="button">Sort: Featured <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 9 6 6 6-6"/></svg></button>
-          <div class="plp-filters__view" role="group" aria-label="View">
-            <button aria-pressed="true" aria-label="Grid view"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button>
-            <button aria-pressed="false" aria-label="List view"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-          </div>
-        </div>
+    <!-- ============== TAB BAR ============== -->
+    <div class="container">
+      <div class="plp-tab-bar" role="tablist" aria-label="Product categories" style="margin-top: var(--sp-12);">
+        <button class="plp-tab-btn is-active" role="tab" aria-selected="true" aria-controls="tab-peptides" id="tbtn-peptides" data-tab="peptides">
+          Research Peptides
+        </button>
+        <button class="plp-tab-btn" role="tab" aria-selected="false" aria-controls="tab-hctp" id="tbtn-hctp" data-tab="hctp">
+          HCT/P Order Form
+        </button>
       </div>
-    </section>
+    </div>
 
-    <section class="plp-grid-wrap">
-      <div class="container">
-        <div class="plp-grid" id="plp-grid">
-          <!-- Skeletons render first; JS swaps in real cards after 600ms -->
-          <div class="product-card is-skeleton is-visible"><div class="product-card__media"></div><div class="product-card__body"><h3 class="product-card__name"></h3><p class="product-card__hook"></p><span class="product-card__price"></span></div></div>
-          <div class="product-card is-skeleton is-visible"><div class="product-card__media"></div><div class="product-card__body"><h3 class="product-card__name"></h3><p class="product-card__hook"></p><span class="product-card__price"></span></div></div>
-          <div class="product-card is-skeleton is-visible"><div class="product-card__media"></div><div class="product-card__body"><h3 class="product-card__name"></h3><p class="product-card__hook"></p><span class="product-card__price"></span></div></div>
+    <!-- ============================================================
+         TAB 1: RESEARCH PEPTIDES
+         ============================================================ -->
+    <div class="plp-tab-panel is-active" id="tab-peptides" role="tabpanel" aria-labelledby="tbtn-peptides">
+      <div class="container" style="padding-top: var(--sp-10); padding-bottom: var(--section-y);">
+
+        <!-- Research disclaimer -->
+        <div style="display:flex; gap:var(--sp-3); align-items:flex-start; background:#f0f6ff; border:1px solid #c8defa; border-radius:var(--radius-md); padding:var(--sp-4) var(--sp-5); margin-bottom:var(--sp-8); font-size:var(--fs-13); color:var(--charcoal); line-height:var(--lh-relaxed);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0359A1" stroke-width="2" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>Research Use Only.</strong> All peptide products are for research purposes only and are not intended for human consumption. Not approved by the FDA for therapeutic use. To place an order, email <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a>.</span>
         </div>
-        <div class="plp-loadmore">
-          <button class="btn btn--outline-sage" id="loadmore">Load more</button>
+
+        <!-- Filter pills -->
+        <div class="peptide-filter-bar" role="group" aria-label="Filter by category" id="peptide-filters">
+          <button class="peptide-filter-pill is-active" data-filter="all">All Products</button>
+          <button class="peptide-filter-pill" data-filter="recovery">Recovery &amp; Regenerative</button>
+          <button class="peptide-filter-pill" data-filter="metabolic">Metabolic / GLP</button>
+          <button class="peptide-filter-pill" data-filter="longevity">Longevity &amp; Aesthetic</button>
+          <button class="peptide-filter-pill" data-filter="nad">NAD+</button>
+          <button class="peptide-filter-pill" data-filter="supplies">Supplies</button>
         </div>
+
+        <!-- Unified product grid -->
+        <div class="peptide-cards-grid" id="peptide-grid">
+
+          <!-- RECOVERY & REGENERATIVE -->
+          <div class="peptide-card" data-category="recovery">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #EBF3FB 0%, #C8DEFA 100%);">
+              <span class="peptide-card__img-abbr">BPC-157</span>
+              <span class="peptide-card__badge">Recovery</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Recovery &amp; Regenerative</span>
+              <h3 class="peptide-card__name">BPC-157</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">Body Protection Compound-157. Studied for gut lining integrity, cellular resilience, and connective tissue support.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$49.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="recovery">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #EBF3FB 0%, #C8DEFA 100%);">
+              <span class="peptide-card__img-abbr">TB-500</span>
+              <span class="peptide-card__badge">Recovery</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Recovery &amp; Regenerative</span>
+              <h3 class="peptide-card__name">TB-500</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">Thymosin Beta-4 fragment. Supports cellular repair processes and connective tissue integrity.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$60.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="recovery">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #EBF3FB 0%, #C8DEFA 100%);">
+              <span class="peptide-card__img-abbr">Wolverine</span>
+              <span class="peptide-card__badge">Recovery</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Recovery &amp; Regenerative</span>
+              <h3 class="peptide-card__name">BPC-157 / TB-500 "Wolverine"</h3>
+              <span class="peptide-card__size">10mg / 10mg</span>
+              <p class="peptide-card__desc">Dual-peptide stack. Popular in orthopedic and sports recovery research protocols.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$75.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="recovery">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #EBF3FB 0%, #C8DEFA 100%);">
+              <span class="peptide-card__img-abbr">CJC w/ DAC</span>
+              <span class="peptide-card__badge">Recovery</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Recovery &amp; Regenerative</span>
+              <h3 class="peptide-card__name">CJC-1295 w/ DAC</h3>
+              <span class="peptide-card__size">5mg</span>
+              <p class="peptide-card__desc">Modified GHRH analog with Drug Affinity Complex. Extended half-life for body composition and longevity research.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$62.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="recovery">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #EBF3FB 0%, #C8DEFA 100%);">
+              <span class="peptide-card__img-abbr">CJC w/o DAC</span>
+              <span class="peptide-card__badge">Recovery</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Recovery &amp; Regenerative</span>
+              <h3 class="peptide-card__name">CJC-1295 w/o DAC</h3>
+              <span class="peptide-card__size">5mg</span>
+              <p class="peptide-card__desc">Short-acting GHRH analog (Mod GRF 1-29). Commonly paired with Ipamorelin in research protocols.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$45.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="recovery">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #EBF3FB 0%, #C8DEFA 100%);">
+              <span class="peptide-card__img-abbr">CJC / Ipam</span>
+              <span class="peptide-card__badge">Recovery</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Recovery &amp; Regenerative</span>
+              <h3 class="peptide-card__name">CJC-1295 / Ipamorelin Blend</h3>
+              <span class="peptide-card__size">5mg / 5mg</span>
+              <p class="peptide-card__desc">Widely used GH secretagogue stack. Amplifies natural GH release with high receptor selectivity.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$50.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="recovery">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #EBF3FB 0%, #C8DEFA 100%);">
+              <span class="peptide-card__img-abbr">Ipamorelin</span>
+              <span class="peptide-card__badge">Recovery</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Recovery &amp; Regenerative</span>
+              <h3 class="peptide-card__name">Ipamorelin</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">Selective GH secretagogue. Stimulates GH release with minimal effect on cortisol or prolactin.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$45.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- METABOLIC / GLP FAMILY -->
+          <div class="peptide-card" data-category="metabolic">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #E6F5F2 0%, #B8E4DA 100%);">
+              <span class="peptide-card__img-abbr">GLP-2</span>
+              <span class="peptide-card__badge" style="color:#0d7a60;">Metabolic</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Metabolic / GLP</span>
+              <h3 class="peptide-card__name">GLP-2</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">Glucagon-Like Peptide-2. Studied for intestinal biology, gut barrier function, and mucosal integrity.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$50.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="metabolic">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #E6F5F2 0%, #B8E4DA 100%);">
+              <span class="peptide-card__img-abbr">GLP-2</span>
+              <span class="peptide-card__badge" style="color:#0d7a60;">Metabolic</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Metabolic / GLP</span>
+              <h3 class="peptide-card__name">GLP-2</h3>
+              <span class="peptide-card__size">30mg</span>
+              <p class="peptide-card__desc">Higher-dose GLP-2. Better value per mg for ongoing gut biology and intestinal research.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$62.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="metabolic">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #E6F5F2 0%, #B8E4DA 100%);">
+              <span class="peptide-card__img-abbr">GLP-2</span>
+              <span class="peptide-card__badge" style="color:#0d7a60;">Metabolic</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Metabolic / GLP</span>
+              <h3 class="peptide-card__name">GLP-2</h3>
+              <span class="peptide-card__size">60mg</span>
+              <p class="peptide-card__desc">Volume SKU. Cost efficiency for sustained GLP-2 research protocols.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$100.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="metabolic">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #E6F5F2 0%, #B8E4DA 100%);">
+              <span class="peptide-card__img-abbr">GLP-2</span>
+              <span class="peptide-card__badge" style="color:#0d7a60;">Metabolic</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Metabolic / GLP</span>
+              <h3 class="peptide-card__name">GLP-2</h3>
+              <span class="peptide-card__size">100mg</span>
+              <p class="peptide-card__desc">High-volume GLP-2. Optimal value per mg for long-term intestinal biology research.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$150.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="metabolic">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #E6F5F2 0%, #B8E4DA 100%);">
+              <span class="peptide-card__img-abbr">GLP-3</span>
+              <span class="peptide-card__badge" style="color:#0d7a60;">Metabolic</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Metabolic / GLP</span>
+              <h3 class="peptide-card__name">GLP-3 / Retatrutide</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">Triple-receptor agonist (GLP-1, GIP, glucagon). Studied for metabolic pathway and body composition research.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$65.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="metabolic">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #E6F5F2 0%, #B8E4DA 100%);">
+              <span class="peptide-card__img-abbr">GLP-3</span>
+              <span class="peptide-card__badge" style="color:#0d7a60;">Metabolic</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Metabolic / GLP</span>
+              <h3 class="peptide-card__name">GLP-3 / Retatrutide</h3>
+              <span class="peptide-card__size">30mg</span>
+              <p class="peptide-card__desc">Higher-dose Retatrutide for established metabolic research protocols.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$100.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="metabolic">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #E6F5F2 0%, #B8E4DA 100%);">
+              <span class="peptide-card__img-abbr">SLU-PP-332</span>
+              <span class="peptide-card__badge" style="color:#0d7a60;">Metabolic</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Metabolic / GLP</span>
+              <h3 class="peptide-card__name">SLU-PP-332</h3>
+              <span class="peptide-card__size">500mcg</span>
+              <p class="peptide-card__desc">ERR alpha/delta agonist. Exercise mimetic studied for endurance and metabolic pathway research.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$45.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="metabolic">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #E6F5F2 0%, #B8E4DA 100%);">
+              <span class="peptide-card__img-abbr">SLU-PP-332</span>
+              <span class="peptide-card__badge" style="color:#0d7a60;">Metabolic</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Metabolic / GLP</span>
+              <h3 class="peptide-card__name">SLU-PP-332</h3>
+              <span class="peptide-card__size">1000mcg</span>
+              <p class="peptide-card__desc">Higher-dose SLU-PP-332. Mitochondrial pathway and metabolic research applications.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$52.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- LONGEVITY & AESTHETIC -->
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">Epithalon</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">Epithalon</h3>
+              <span class="peptide-card__size">50mg</span>
+              <p class="peptide-card__desc">Synthetic tetrapeptide. Studied for telomerase biology, circadian regulation, and neuroendocrine research.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$75.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">GHK-Cu</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">GHK-Cu</h3>
+              <span class="peptide-card__size">50mg</span>
+              <p class="peptide-card__desc">Copper-bound tripeptide. Studied for collagen biosynthesis, skin matrix support, and hair follicle biology.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$20.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">GHK-Cu</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">GHK-Cu</h3>
+              <span class="peptide-card__size">100mg</span>
+              <p class="peptide-card__desc">Higher-volume GHK-Cu. Better value for skin, hair, and connective tissue biology research.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$28.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">GLOW</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">GHK-Cu / BPC-157 / TB-500 "GLOW"</h3>
+              <span class="peptide-card__size">50mg / 10mg / 10mg</span>
+              <p class="peptide-card__desc">Premium triple-blend. Comprehensive cellular support and aesthetic research applications.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$112.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">KLOW</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">GHK-Cu / TB-500 / BPC-157 / KPV "KLOW"</h3>
+              <span class="peptide-card__size">50mg / 10mg / 10mg / 10mg</span>
+              <p class="peptide-card__desc">Four-peptide stack. Broad-spectrum cellular support and longevity research protocol.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$112.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">Tesamorelin</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">Tesamorelin</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">Stabilized GHRH analog. Studied for visceral adipose biology and GH pulse optimization research.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$75.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">PT-141</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">PT-141</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">Bremelanotide. Melanocortin receptor agonist studied for sexual health and libido biology.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$38.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">MT-2</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">Melanotan 2 (MT2)</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">Synthetic melanocortin analog. Studied for skin pigmentation, libido, and appetite biology.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$30.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">Selank</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">Selank</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">Synthetic heptapeptide anxiolytic. Studied for stress response, cognitive performance, and neurological support.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$44.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">Semax</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">Semax</h3>
+              <span class="peptide-card__size">10mg</span>
+              <p class="peptide-card__desc">ACTH-derived neuropeptide. Studied for neuroprotection, cognitive performance, and stress resilience.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$38.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="longevity">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0EDFB 0%, #D8CEEF 100%);">
+              <span class="peptide-card__img-abbr" style="color:#6b4fa8;">5-AMQ</span>
+              <span class="peptide-card__badge" style="color:#6b4fa8;">Longevity</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Longevity &amp; Aesthetic</span>
+              <h3 class="peptide-card__name">5-Amino-1MQ</h3>
+              <span class="peptide-card__size">50mg</span>
+              <p class="peptide-card__desc">NNMT inhibitor. Studied for mitochondrial pathway function and metabolic biology research.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$55.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- NAD+ -->
+          <div class="peptide-card" data-category="nad">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #FDF6E8 0%, #FAE4B0 100%);">
+              <span class="peptide-card__img-abbr" style="color:#a06b00;">NAD+</span>
+              <span class="peptide-card__badge" style="color:#a06b00;">NAD+</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">NAD+</span>
+              <h3 class="peptide-card__name">NAD+</h3>
+              <span class="peptide-card__size">100mg</span>
+              <p class="peptide-card__desc">Nicotinamide Adenine Dinucleotide. Studied for cellular energy biology, DNA repair pathways, and sirtuin activation.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$30.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="nad">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #FDF6E8 0%, #FAE4B0 100%);">
+              <span class="peptide-card__img-abbr" style="color:#a06b00;">NAD+</span>
+              <span class="peptide-card__badge" style="color:#a06b00;">NAD+</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">NAD+</span>
+              <h3 class="peptide-card__name">NAD+</h3>
+              <span class="peptide-card__size">500mg</span>
+              <p class="peptide-card__desc">Standard clinical-dose NAD+. Metabolic biology and neurological research applications.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$45.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="nad">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #FDF6E8 0%, #FAE4B0 100%);">
+              <span class="peptide-card__img-abbr" style="color:#a06b00;">NAD+</span>
+              <span class="peptide-card__badge" style="color:#a06b00;">NAD+</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">NAD+</span>
+              <h3 class="peptide-card__name">NAD+</h3>
+              <span class="peptide-card__size">1000mg</span>
+              <p class="peptide-card__desc">High-dose NAD+ for intensive longevity research protocols. Sustained cellular energy biology applications.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$50.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- SUPPLIES -->
+          <div class="peptide-card" data-category="supplies">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0F2F5 0%, #D8DDE8 100%);">
+              <span class="peptide-card__img-abbr" style="color:#4a5568;">BAC Water</span>
+              <span class="peptide-card__badge" style="color:#4a5568;">Supplies</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Reconstitution Supplies</span>
+              <h3 class="peptide-card__name">BAC Water</h3>
+              <span class="peptide-card__size">3ml</span>
+              <p class="peptide-card__desc">Bacteriostatic water for peptide reconstitution. Sterile and multi-dose compatible.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$8.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="peptide-card" data-category="supplies">
+            <div class="peptide-card__img" style="--card-img-bg: linear-gradient(145deg, #F0F2F5 0%, #D8DDE8 100%);">
+              <span class="peptide-card__img-abbr" style="color:#4a5568;">BAC Water</span>
+              <span class="peptide-card__badge" style="color:#4a5568;">Supplies</span>
+            </div>
+            <div class="peptide-card__body">
+              <span class="peptide-card__cat">Reconstitution Supplies</span>
+              <h3 class="peptide-card__name">BAC Water</h3>
+              <span class="peptide-card__size">10ml</span>
+              <p class="peptide-card__desc">Larger-format BAC Water. Better value for high-volume reconstitution needs.</p>
+            </div>
+            <div class="peptide-card__foot">
+              <span class="peptide-card__price">$14.00</span>
+              <button class="peptide-card__cta" type="button" onclick="addToCart(event, this)">Add to Cart</button>
+            </div>
+          </div>
+
+        </div><!-- /peptide-cards-grid -->
       </div>
-    </section>
+    </div>
+
+    <!-- ============================================================
+         TAB 2: HCT/P ORDER FORM
+         ============================================================ -->
+    <div class="plp-tab-panel" id="tab-hctp" role="tabpanel" aria-labelledby="tbtn-hctp">
+      <div class="container" style="padding-bottom: var(--section-y);">
+
+        <div class="plp-order-intro">
+          <h2>HCT/P Allograft Order Form</h2>
+          <p>Submit your order for VB-CB™ Umbilical Cord Blood, VB-WJ™ Wharton's Jelly, VB-XO™ Exosomes, and VB-ECM™ Amniotic ECM. For use by NPI-verified licensed healthcare providers only. Orders are processed at <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a> — you can also <a href="asset/stem-cell-order-form.pdf" download="Vital_Balance_Stem_Cell_Order_Form.pdf">download the PDF form</a> to email directly.</p>
+        </div>
+
+        <div class="plp-order-deadline">
+          <strong>⏱ Order Deadlines:</strong> For overnight delivery, place orders by <strong>1:00pm MST</strong> the day before shipping. For same-day pickup or local delivery, place orders by <strong>1:00pm MST</strong> on the day needed.
+        </div>
+
+        <form class="order-form" id="plpOrderForm" onsubmit="handlePlpOrderSubmit(event)">
+
+          <!-- 1. PRODUCT ORDER INFORMATION -->
+          <div class="order-section reveal">
+            <div class="order-section__head">
+              <span class="order-section__num">1</span>
+              <h2 class="order-section__title">Product Order Information</h2>
+            </div>
+            <div class="order-section__body">
+              <div class="order-product-table">
+                <div class="order-product-table__header">
+                  <span>Product</span>
+                  <span>Unit Size</span>
+                  <span>Quantity</span>
+                </div>
+
+                <div class="order-product-table__group-label">VB-CB™: Umbilical Cord Blood</div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB-CB™</span>
+                  <span class="order-product-table__size">0.50 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="cb_0_5ml" aria-label="VB-CB 0.5mL quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB-CB™</span>
+                  <span class="order-product-table__size">1.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="cb_1ml" aria-label="VB-CB 1mL quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB-CB™</span>
+                  <span class="order-product-table__size">2.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="cb_2ml" aria-label="VB-CB 2mL quantity" />
+                </div>
+
+                <div class="order-product-table__group-label">VB-WJ™: Wharton's Jelly</div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB-WJ™</span>
+                  <span class="order-product-table__size">1.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="wj_1ml" aria-label="VB-WJ 1mL quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB-WJ™</span>
+                  <span class="order-product-table__size">2.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="wj_2ml" aria-label="VB-WJ 2mL quantity" />
+                </div>
+
+                <div class="order-product-table__group-label">VB-XO™: Exosomes</div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB-XO™</span>
+                  <span class="order-product-table__size">1.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="xo_1ml" aria-label="VB-XO 1mL quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB-XO™</span>
+                  <span class="order-product-table__size">2.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="xo_2ml" aria-label="VB-XO 2mL quantity" />
+                </div>
+
+                <div class="order-product-table__group-label">VB-ECM™: Amniotic ECM</div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB-ECM™</span>
+                  <span class="order-product-table__size">1.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="ecm_1ml" aria-label="VB-ECM 1mL quantity" />
+                </div>
+                <div class="order-product-table__row">
+                  <span class="order-product-table__name">VB-ECM™</span>
+                  <span class="order-product-table__size">2.0 mL</span>
+                  <input class="order-product-table__qty" type="number" min="0" value="0" name="ecm_2ml" aria-label="VB-ECM 2mL quantity" />
+                </div>
+              </div>
+
+              <div class="order-dmso">
+                <span>Do you need a DMSO free product? <em>(Additional charge, subject to availability)</em></span>
+                <div class="order-dmso__radios">
+                  <label><input type="radio" name="plp_dmso_free" value="yes" /> Yes</label>
+                  <label><input type="radio" name="plp_dmso_free" value="no" checked /> No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. CUSTOMER INFORMATION -->
+          <div class="order-section reveal">
+            <div class="order-section__head">
+              <span class="order-section__num">2</span>
+              <h2 class="order-section__title">Customer Information</h2>
+            </div>
+            <div class="order-section__body">
+              <div class="order-grid">
+                <div class="order-field">
+                  <label for="plp-o-first">First Name *</label>
+                  <input type="text" id="plp-o-first" name="first_name" required placeholder="Jane" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-last">Last Name *</label>
+                  <input type="text" id="plp-o-last" name="last_name" required placeholder="Smith" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-phone">Phone Number *</label>
+                  <input type="tel" id="plp-o-phone" name="phone" required placeholder="(555) 000-0000" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-email">Email Address *</label>
+                  <input type="email" id="plp-o-email" name="email" required placeholder="jane@clinic.com" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. ACCOUNT INFORMATION -->
+          <div class="order-section reveal">
+            <div class="order-section__head">
+              <span class="order-section__num">3</span>
+              <h2 class="order-section__title">Account Information</h2>
+            </div>
+            <div class="order-section__body">
+              <div class="order-grid">
+                <div class="order-field">
+                  <label for="plp-o-org">Organization Name *</label>
+                  <input type="text" id="plp-o-org" name="org_name" required placeholder="Advanced Clinic" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-practitioner">Healthcare Practitioner Name</label>
+                  <input type="text" id="plp-o-practitioner" name="practitioner_name" placeholder="Dr. Full Name" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-npi">NPI # *</label>
+                  <input type="text" id="plp-o-npi" name="npi" required placeholder="1234567890" pattern="[0-9]{10}" title="10-digit NPI number" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-org-phone">Organization Phone</label>
+                  <input type="tel" id="plp-o-org-phone" name="org_phone" placeholder="(555) 000-0000" />
+                </div>
+                <div class="order-field order-grid--full">
+                  <label for="plp-o-address">Address</label>
+                  <input type="text" id="plp-o-address" name="address" placeholder="Street address, city, state, zip" />
+                </div>
+                <div class="order-field order-grid--full">
+                  <label for="plp-o-org-email">Organization Email</label>
+                  <input type="email" id="plp-o-org-email" name="org_email" placeholder="orders@clinic.com" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. DELIVERY INFORMATION -->
+          <div class="order-section reveal">
+            <div class="order-section__head">
+              <span class="order-section__num">4</span>
+              <h2 class="order-section__title">Pickup / Local Delivery / Overnight Shipping</h2>
+            </div>
+            <div class="order-section__body">
+              <div class="order-field">
+                <label>Delivery Method *</label>
+                <div class="order-delivery-methods">
+                  <label class="order-delivery-method">
+                    <input type="radio" name="plp_delivery_method" value="pickup" required />
+                    <div class="order-delivery-method__text">
+                      <span class="order-delivery-method__name">Pickup</span>
+                      <span class="order-delivery-method__fee">No shipping fee</span>
+                    </div>
+                  </label>
+                  <label class="order-delivery-method">
+                    <input type="radio" name="plp_delivery_method" value="local_delivery" />
+                    <div class="order-delivery-method__text">
+                      <span class="order-delivery-method__name">Local / Same-Day</span>
+                      <span class="order-delivery-method__fee">$35, select areas</span>
+                    </div>
+                  </label>
+                  <label class="order-delivery-method">
+                    <input type="radio" name="plp_delivery_method" value="overnight_shipping" />
+                    <div class="order-delivery-method__text">
+                      <span class="order-delivery-method__name">Overnight Shipping</span>
+                      <span class="order-delivery-method__fee">$150, by 10:30am</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="order-grid">
+                <div class="order-field">
+                  <label for="plp-o-date">Date Needed *</label>
+                  <input type="date" id="plp-o-date" name="date_needed" required />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-time">Time Needed (Pickup / Local Delivery)</label>
+                  <input type="time" id="plp-o-time" name="time_needed" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-ship-org">Organization Name (Shipping)</label>
+                  <input type="text" id="plp-o-ship-org" name="ship_org" placeholder="Organization name" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-ship-contact">Contact Name (Shipping)</label>
+                  <input type="text" id="plp-o-ship-contact" name="ship_contact" placeholder="Contact name" />
+                </div>
+                <div class="order-field order-grid--full">
+                  <label for="plp-o-ship-address">Delivery Address</label>
+                  <input type="text" id="plp-o-ship-address" name="ship_address" placeholder="Full delivery address" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-ship-phone">Phone Number (Shipping)</label>
+                  <input type="tel" id="plp-o-ship-phone" name="ship_phone" placeholder="(555) 000-0000" />
+                </div>
+                <div class="order-field">
+                  <label for="plp-o-ship-email">Shipping Email</label>
+                  <input type="email" id="plp-o-ship-email" name="ship_email" placeholder="shipping@clinic.com" />
+                </div>
+                <div class="order-field order-grid--full">
+                  <label for="plp-o-ship-notes">Special Shipping Instructions</label>
+                  <textarea id="plp-o-ship-notes" name="ship_notes" placeholder="e.g., specific packaging or handling requirements"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="order-actions">
+            <button type="submit" class="btn btn--primary btn--lg" id="plpSubmitBtn">Submit Order</button>
+            <a class="btn btn--ghost" href="asset/stem-cell-order-form.pdf" download="Vital_Balance_Stem_Cell_Order_Form.pdf">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download PDF Form
+            </a>
+            <span class="order-actions__or">·</span>
+            <span class="order-actions__email">or email completed form to <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a></span>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
   </main>
 
+  <!-- ============== CONTACT FORM ============== -->
+  <section class="contact-section" id="contact" aria-labelledby="plp-contact-heading">
+    <div class="container">
+      <div class="contact-section__grid">
+        <div class="contact-info reveal">
+          <p class="eyebrow eyebrow--cream contact-info__eyebrow">Get In Touch</p>
+          <h2 id="plp-contact-heading" class="contact-info__title">Contact Us</h2>
+          <p class="contact-info__desc">Whether you're a practitioner, clinic owner, or researcher — fill out the form and our team will reach out within 24 hours.</p>
+          <div class="contact-info__detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Salt Lake City, Utah
+          </div>
+          <div class="contact-info__detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+            (801) 949-8256
+          </div>
+          <div class="contact-info__detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Orders: <a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a></span>
+          </div>
+          <div class="contact-info__detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Support: <a href="mailto:support@vitalbalance.bio">support@vitalbalance.bio</a></span>
+          </div>
+          <div class="contact-info__socials">
+            <a class="contact-info__social" href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a class="contact-info__social" href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zm0 6h4v10H4zm6 0h4v2c1-2 4-3 6-1s2 4 2 6v3h-4v-4c0-1-.4-2-2-2s-2 1-2 2v4h-4z"/></svg></a>
+          </div>
+        </div>
+        <div class="contact-form-card reveal">
+          <p class="contact-form-card__intro">Thank you for your interest in Vital Balance. Fill out the form below and an account executive will reach out within 24 hours.</p>
+          <form onsubmit="event.preventDefault(); this.querySelector('.contact-form__submit').textContent='Submitted. We\'ll be in touch!'">
+            <div class="contact-form__row">
+              <div class="contact-form__field">
+                <label for="plp-cf-first">First Name *</label>
+                <input type="text" id="plp-cf-first" name="first_name" required placeholder="Jane" />
+              </div>
+              <div class="contact-form__field">
+                <label for="plp-cf-last">Last Name *</label>
+                <input type="text" id="plp-cf-last" name="last_name" required placeholder="Smith" />
+              </div>
+            </div>
+            <div class="contact-form__field">
+              <label for="plp-cf-clinic">Clinic / Organization</label>
+              <input type="text" id="plp-cf-clinic" name="clinic_name" placeholder="Clinic or organization (optional)" />
+            </div>
+            <div class="contact-form__field">
+              <label for="plp-cf-location">Location (City &amp; State)</label>
+              <input type="text" id="plp-cf-location" name="clinic_location" placeholder="Los Angeles, CA" />
+            </div>
+            <div class="contact-form__row">
+              <div class="contact-form__field">
+                <label for="plp-cf-email">Email *</label>
+                <input type="email" id="plp-cf-email" name="email" required placeholder="jane@clinic.com" />
+              </div>
+              <div class="contact-form__field">
+                <label for="plp-cf-phone">Phone</label>
+                <input type="tel" id="plp-cf-phone" name="phone" placeholder="(555) 000-0000" />
+              </div>
+            </div>
+            <div class="contact-form__field">
+              <label for="plp-cf-message">Message</label>
+              <textarea id="plp-cf-message" name="message" placeholder="Tell us about your clinic and how we can help..."></textarea>
+            </div>
+            <button type="submit" class="contact-form__submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div>
           <p class="footer__brand-tag">Vital Balance</p>
-          <p class="footer__blurb">Regenerative wellness, formulated alongside the practitioners who use it.</p>
+          <p class="footer__blurb">Premium HCT/P allografts and research peptides for licensed healthcare providers. Bioethically sourced, rigorously tested.</p>
           <div class="footer__socials">
             <a class="footer__social" href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
-            <a class="footer__social" href="#" aria-label="Substack"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4h14v3H5zM5 9h14v3H5zM5 14l7 6 7-6H5z"/></svg></a>
+            <a class="footer__social" href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zm0 6h4v10H4zm6 0h4v2c1-2 4-3 6-1s2 4 2 6v3h-4v-4c0-1-.4-2-2-2s-2 1-2 2v4h-4z"/></svg></a>
           </div>
         </div>
-        <div class="footer__col"><h4>Shop</h4><ul class="footer__list"><li><a href="vitalbalance-plp.html">All Formulas</a></li><li><a href="#">Adaptogens</a></li><li><a href="#">Longevity</a></li><li><a href="#">Subscriptions</a></li></ul></div>
-        <div class="footer__col"><h4>Learn</h4><ul class="footer__list"><li><a href="#">Our Story</a></li><li><a href="#">Sourcing</a></li><li><a href="#">Journal</a></li><li><a href="#">Practitioners</a></li></ul></div>
-        <div class="footer__col footer__newsletter"><h4>Letters from the practice</h4><p style="font-size: var(--fs-14); color: var(--fg-on-dark-mute); margin-bottom: var(--sp-4);">10% off your first order.</p><form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Welcomed';"><input type="email" placeholder="your@email.com" /><button type="submit">Join</button></form></div>
+        <div class="footer__col">
+          <h4>Pages</h4>
+          <ul class="footer__list">
+            <li><a href="vitalbalance-home.html">Home</a></li>
+            <li><a href="vitalbalance-about.html">About</a></li>
+            <li><a href="vitalbalance-plp.html">Products</a></li>
+            <li><a href="vitalbalance-order.html">HCT/P Order Form</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul class="footer__list">
+            <li style="color: var(--fg-on-dark-mute); font-size: var(--fs-14);">Salt Lake City, Utah</li>
+            <li style="color: var(--fg-on-dark-mute); font-size: var(--fs-14);">(801) 949-8256</li>
+            <li><a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a></li>
+            <li><a href="mailto:support@vitalbalance.bio">support@vitalbalance.bio</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer__bottom"><span>© 2026 Vital Balance, Inc.</span><div class="footer__certs"><span>USDA Organic</span><span>NSF Certified</span><span>Climate Neutral</span></div></div>
+      <p class="footer__disclaimer">For use by licensed healthcare professionals only. Not for consumer sale. These products are not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary; no outcomes are guaranteed. FDA-registered HCT/P establishment under 21 CFR Part 1271 — establishment registration is not product approval.</p>
+      <div class="footer__bottom">
+        <span>© 2026 Vital Balance, Inc.</span>
+        <div class="footer__certs">
+          <span>HCT/P Compliant</span><span>Bioethically Sourced</span><span>Third-Party Tested</span>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- Floating add-to-cart confirmation bar -->
+  <div class="plp-toast" id="plp-toast" role="status" aria-live="polite">
+    <span class="plp-toast__check">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+    </span>
+    <span id="plp-toast-label">Added to cart</span>
+    <button class="plp-toast__close" aria-label="Dismiss" onclick="dismissToast()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
   <script src="shared.js"></script>
   <script>
-    // Product catalog — swapped into grid after 600ms simulate load.
-    const PRODUCTS = [
-      { cat: "Adaptogen", name: "Cellular Vitality Complex", hook: "Sustained mitochondrial energy.", price: "$68", rating: 4.8, badge: "New", img: "adaptogen" },
-      { cat: "Longevity", name: "NAD+ Restorative Tonic", hook: "Supports cellular repair pathways.", price: "$92", rating: 4.9, badge: "Bestseller", img: "longevity" },
-      { cat: "Cellular", name: "Mitochondrial Restore", hook: "Energy production, at the source.", price: "$54", rating: 4.7, badge: null, img: "cellular" },
-      { cat: "Mineral", name: "Trace Mineral Reserve", hook: "From ancient seabeds, ionic form.", price: "$36", priceOld: "$48", rating: 4.6, badge: "Sale", img: "mineral" },
-      { cat: "Immune", name: "Reishi Spore Powder", hook: "Wild-foraged, dual-extracted.", price: "$48", rating: 4.7, badge: null, img: "immune" },
-      { cat: "Cognitive", name: "Lion's Mane Extract", hook: "Clarity, without the crash.", price: "$42", rating: 4.8, badge: null, img: "cognitive" },
-      { cat: "Digestive", name: "Bitters & Bloom", hook: "Pre-meal digestive primer.", price: "$38", rating: 4.6, badge: "New", img: "digestive" },
-      { cat: "Hormonal", name: "Cycle Equilibrium", hook: "Daily endocrine support.", price: "$58", rating: 4.7, badge: null, img: "hormonal" },
-      { cat: "Adaptogen", name: "Ashwagandha KSM-66", hook: "Single-farm, regeneratively grown.", price: "$32", rating: 4.9, badge: "Bestseller", img: "adaptogen" },
-    ];
+    /* ── Cart state (localStorage) ── */
+    const VBCart = {
+      KEY: "vb_cart",
+      get() { try { return JSON.parse(localStorage.getItem(this.KEY) || "[]"); } catch { return []; } },
+      add(item) {
+        const cart = this.get();
+        const existing = cart.find(i => i.name === item.name && i.size === item.size);
+        if (existing) { existing.qty++; } else { cart.push({ ...item, qty: 1 }); }
+        localStorage.setItem(this.KEY, JSON.stringify(cart));
+        this.updateBadge();
+      },
+      count() { return this.get().reduce((n, i) => n + i.qty, 0); },
+      updateBadge() {
+        const n = this.count();
+        const badge = document.getElementById("cart-badge");
+        if (!badge) return;
+        badge.textContent = n;
+        badge.hidden = n === 0;
+      }
+    };
 
-    const heart = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg>`;
-    const star = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg>`;
-
-    function cardHTML(p) {
-      const badge = p.badge ? `<span class="product-card__badge ${p.badge==='Sale'?'product-card__badge--sale':p.badge==='New'?'product-card__badge--new':''}">${p.badge}</span>` : "";
-      const oldP = p.priceOld ? `<span class="product-card__price-old">${p.priceOld}</span>` : "";
-      return `
-        <a class="product-card" href="vitalbalance-pdp.html">
-          <div class="product-card__media">
-            <div class="product-card__image product-card__image--${p.img}"></div>
-            ${badge}
-            <button class="product-card__wishlist" aria-label="Wishlist" aria-pressed="false">${heart}</button>
-            <div class="product-card__drawer">
-              <button class="btn btn--primary">Add to cart</button>
-              <button class="btn btn--ghost">Quick view</button>
-            </div>
-          </div>
-          <div class="product-card__body">
-            <span class="product-card__category">${p.cat}</span>
-            <h3 class="product-card__name">${p.name}</h3>
-            <p class="product-card__hook">${p.hook}</p>
-            <div class="product-card__meta">
-              <div>${oldP}<span class="product-card__price">${p.price}</span></div>
-              <div class="product-card__stars">${star}${star}${star}${star}${star}<span class="product-card__stars-num">${p.rating}</span></div>
-            </div>
-          </div>
-        </a>
-      `;
+    /* ── Toast ── */
+    let _toastTimer;
+    function showToast(name, size) {
+      const toast = document.getElementById("plp-toast");
+      const label = document.getElementById("plp-toast-label");
+      label.textContent = name + (size ? " · " + size : "") + " added to cart";
+      toast.classList.add("is-visible");
+      clearTimeout(_toastTimer);
+      _toastTimer = setTimeout(dismissToast, 3000);
+    }
+    function dismissToast() {
+      document.getElementById("plp-toast").classList.remove("is-visible");
     }
 
-    setTimeout(() => {
-      const grid = document.getElementById("plp-grid");
-      grid.innerHTML = PRODUCTS.map(cardHTML).join("");
-      // re-bind wishlist + entrance
-      grid.querySelectorAll(".product-card__wishlist").forEach(btn => {
-        btn.addEventListener("click", e => {
-          e.stopPropagation(); e.preventDefault();
-          const v = btn.getAttribute("aria-pressed") === "true";
-          btn.setAttribute("aria-pressed", String(!v));
+    /* ── Add to cart ── */
+    function addToCart(e, btn) {
+      e.stopPropagation();
+      const card = btn.closest(".peptide-card");
+      const name = card.querySelector(".peptide-card__name").textContent.trim();
+      const size = card.querySelector(".peptide-card__size") ? card.querySelector(".peptide-card__size").textContent.trim() : "";
+      const price = card.querySelector(".peptide-card__price") ? card.querySelector(".peptide-card__price").textContent.trim() : "";
+      const cat = card.dataset.category || "";
+      VBCart.add({ name, size, price, cat });
+      showToast(name, size);
+      /* Brief visual feedback on button */
+      btn.textContent = "Added!";
+      btn.style.background = "#22c55e";
+      setTimeout(() => { btn.textContent = "Add to Cart"; btn.style.background = ""; }, 1400);
+    }
+
+    /* ── Card click → PDP ── */
+    function goToPDP(e) {
+      if (!e.target.closest(".peptide-card__cta")) {
+        window.location.href = "vitalbalance-pdp.html";
+      }
+    }
+
+    /* Stub — cart drawer future hook */
+    function toggleCartDrawer() {
+      const n = VBCart.count();
+      if (n === 0) { showToast("Your cart is empty", ""); return; }
+      /* Cart drawer will be wired here in next pass */
+    }
+
+    /* ── Tab switching ── */
+    document.querySelectorAll(".plp-tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const tab = btn.dataset.tab;
+        document.querySelectorAll(".plp-tab-btn").forEach(b => {
+          b.classList.remove("is-active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-selected", "true");
+        document.querySelectorAll(".plp-tab-panel").forEach(p => p.classList.remove("is-active"));
+        document.getElementById("tab-" + tab).classList.add("is-active");
+      });
+    });
+
+    /* ── Peptide filter pills ── */
+    document.querySelectorAll(".peptide-filter-pill").forEach(pill => {
+      pill.addEventListener("click", () => {
+        const filter = pill.dataset.filter;
+        document.querySelectorAll(".peptide-filter-pill").forEach(p => p.classList.remove("is-active"));
+        pill.classList.add("is-active");
+        document.querySelectorAll(".peptide-card").forEach(card => {
+          if (filter === "all" || card.dataset.category === filter) {
+            card.removeAttribute("hidden");
+          } else {
+            card.setAttribute("hidden", "");
+          }
         });
       });
-      const io = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
-        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); } });
-      }, { threshold: 0.12 }) : null;
-      if (io) grid.querySelectorAll(".product-card").forEach(c => io.observe(c));
-      else grid.querySelectorAll(".product-card").forEach(c => c.classList.add("is-visible"));
-    }, 600);
-
-    // Filter pill toggle (visual only)
-    document.querySelectorAll(".plp-filters .pill").forEach(p => {
-      p.addEventListener("click", () => {
-        document.querySelectorAll(".plp-filters .pill").forEach(x => x.classList.remove("is-active"));
-        p.classList.add("is-active");
-      });
     });
 
-    document.getElementById("loadmore").addEventListener("click", e => {
-      e.target.textContent = "All formulas loaded ✓";
-      e.target.disabled = true;
+    /* ── Wire card-body clicks to PDP navigation ── */
+    document.querySelectorAll(".peptide-card").forEach(card => {
+      card.addEventListener("click", e => goToPDP(e));
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+      card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") goToPDP(e); });
     });
+
+    /* ── HCT/P order form submit ── */
+    function handlePlpOrderSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById("plpSubmitBtn");
+      btn.textContent = "Order Submitted. We'll be in touch!";
+      btn.disabled = true;
+      btn.style.background = "var(--sage-dark)";
+    }
+
+    /* ── Init badge on page load ── */
+    VBCart.updateBadge();
   </script>
 </body>
 </html>

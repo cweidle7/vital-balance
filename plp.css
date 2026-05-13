@@ -2,65 +2,117 @@
    Vital Balance — PLP (Product Listing) Styles
    ============================================================ */
 
-/* PLP hero — tall editorial gradient with bottom-left headline */
+/* PLP hero — compact branded banner, ~100px, no full-bleed takeover */
 .plp-hero {
   position: relative;
-  height: clamp(360px, 56vw, 560px);
   margin-top: var(--nav-h);
+  padding-block: var(--sp-6) var(--sp-7);
   background:
-    radial-gradient(60% 50% at 70% 30%, rgba(3, 89, 161, 0.3) 0%, transparent 60%),
-    linear-gradient(165deg, #024A8A 0%, #012D57 50%, #011E3F 100%);
+    radial-gradient(50% 120% at 75% 50%, rgba(3, 89, 161, 0.3) 0%, transparent 70%),
+    linear-gradient(165deg, #024A8A 0%, #012D57 55%, #011E3F 100%);
   overflow: hidden;
   color: var(--cream);
   isolation: isolate;
 }
 .plp-hero::before {
-  /* shared noise grain */
   content: "";
   position: absolute; inset: 0;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
-  opacity: 0.16; mix-blend-mode: overlay;
+  opacity: 0.14; mix-blend-mode: overlay;
 }
 .plp-hero__inner {
   position: relative;
   z-index: 1;
-  height: 100%;
   display: flex;
-  align-items: end;
-  padding: var(--gutter);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  padding-inline: var(--gutter);
+}
+.plp-hero__eyebrow {
+  font-size: var(--fs-11);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 var(--sp-1);
 }
 .plp-hero__title {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 300;
-  font-size: var(--h-display);
-  line-height: 0.95;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.05;
   color: var(--cream);
-  max-width: 16ch;
+  margin: 0;
   letter-spacing: var(--tracking-display);
-  /* extends past edge for editorial feel */
-  margin-bottom: calc(-1 * var(--sp-1));
 }
 .plp-hero__count {
-  position: absolute;
-  top: var(--sp-10); right: var(--gutter);
   font-family: var(--font-display);
-  font-size: clamp(4rem, 12vw, 9rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 300;
   font-style: italic;
   color: var(--cream);
-  opacity: 0.16;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
+  opacity: 0.3;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  flex-shrink: 0;
+  text-align: right;
 }
 .plp-hero__count small {
-  font-size: 0.4em;
+  font-size: 0.38em;
   display: block;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   font-style: normal;
-  margin-top: var(--sp-2);
+  margin-top: var(--sp-1);
+  opacity: 0.8;
 }
+@media (max-width: 480px) { .plp-hero__count { display: none; } }
+
+/* Floating add-to-cart toast */
+.plp-toast {
+  position: fixed;
+  bottom: var(--sp-8);
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(100% + 40px));
+  z-index: calc(var(--z-nav) + 20);
+  background: #0f1f35;
+  color: #fff;
+  border-radius: var(--radius-pill);
+  padding: var(--sp-3) var(--sp-3) var(--sp-3) var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-14);
+  font-weight: 500;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  transition: transform 300ms cubic-bezier(0.34, 1.4, 0.64, 1);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.plp-toast.is-visible {
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+.plp-toast__check {
+  width: 22px; height: 22px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.plp-toast__close {
+  width: 28px; height: 28px;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.45);
+  margin-left: var(--sp-1);
+  cursor: pointer;
+  background: none; border: none;
+  border-radius: 50%;
+  transition: color 150ms, background 150ms;
+  flex-shrink: 0;
+}
+.plp-toast__close:hover { color: #fff; background: rgba(255,255,255,0.1); }
 
 /* Filter bar — pinned below nav on scroll */
 .plp-filters {
@@ -143,3 +195,248 @@
 }
 .plp-loadmore .btn { min-width: 240px; }
 @media (max-width: 600px) { .plp-loadmore .btn { width: 100%; } }
+
+/* ============================================================
+   PLP TABS (Peptides / HCT/P Order Form)
+   ============================================================ */
+.plp-tab-bar {
+  border-bottom: 2px solid var(--border);
+  margin-bottom: var(--sp-12);
+  display: flex;
+  gap: 0;
+}
+.plp-tab-btn {
+  padding: var(--sp-4) var(--sp-8);
+  font-family: var(--font-body);
+  font-size: var(--fs-14);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mid);
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.plp-tab-btn:hover { color: var(--charcoal); }
+.plp-tab-btn.is-active {
+  color: var(--sage-dark);
+  border-bottom-color: var(--sage-dark);
+}
+
+.plp-tab-panel { display: none; }
+.plp-tab-panel.is-active { display: block; }
+
+/* ============================================================
+   PEPTIDE FILTER BAR
+   ============================================================ */
+.peptide-filter-bar {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-bottom: var(--sp-10);
+  padding-bottom: var(--sp-1);
+}
+.peptide-filter-bar::-webkit-scrollbar { display: none; }
+
+.peptide-filter-pill {
+  flex-shrink: 0;
+  padding: var(--sp-2) var(--sp-5);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  font-size: var(--fs-13);
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--charcoal);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.peptide-filter-pill:hover {
+  border-color: var(--sage);
+  color: var(--sage-dark);
+}
+.peptide-filter-pill.is-active {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #fff;
+}
+
+/* ============================================================
+   PEPTIDE CARDS — product-card style
+   ============================================================ */
+.peptide-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-16);
+}
+@media (min-width: 768px)  { .peptide-cards-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1100px) { .peptide-cards-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.peptide-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow 250ms ease, transform 250ms ease, border-color 250ms ease;
+}
+.peptide-card:hover {
+  box-shadow: 0 8px 32px rgba(3, 89, 161, 0.12);
+  border-color: var(--sage);
+  transform: translateY(-3px);
+}
+.peptide-card[hidden] { display: none !important; }
+
+/* Placeholder image zone */
+.peptide-card__img {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-img-bg, linear-gradient(145deg, #EBF3FB 0%, #C8DEFA 100%));
+  position: relative;
+  overflow: hidden;
+}
+.peptide-card__img-abbr {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--sage);
+  opacity: 0.55;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding: var(--sp-3);
+  line-height: 1.15;
+  max-width: 90%;
+  word-break: break-word;
+}
+.peptide-card__badge {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: var(--radius-pill);
+  padding: 2px var(--sp-3);
+  font-size: var(--fs-11);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  border: 1px solid var(--border);
+}
+
+/* Card body */
+.peptide-card__body {
+  padding: var(--sp-4) var(--sp-4) var(--sp-2);
+  flex: 1;
+}
+.peptide-card__cat {
+  display: block;
+  font-size: var(--fs-11);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: var(--sp-1);
+}
+.peptide-card__name {
+  font-family: var(--font-body);
+  font-size: var(--fs-14);
+  font-weight: 700;
+  color: var(--charcoal);
+  margin: 0 0 var(--sp-2);
+  line-height: var(--lh-snug);
+}
+.peptide-card__size {
+  display: inline-block;
+  font-size: var(--fs-11);
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--surface-2, #f4f6f8);
+  border-radius: var(--radius-pill);
+  padding: 1px var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+.peptide-card__desc {
+  font-size: var(--fs-12);
+  color: var(--muted);
+  line-height: var(--lh-relaxed);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card footer */
+.peptide-card__foot {
+  padding: var(--sp-3) var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.peptide-card__price {
+  font-size: var(--fs-17);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.peptide-card__cta {
+  display: block;
+  width: 100%;
+  padding: var(--sp-3) var(--sp-2);
+  background: var(--sage-deepest);
+  color: #fff;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-12);
+  font-weight: 700;
+  letter-spacing: var(--tracking-mid);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 200ms ease;
+}
+.peptide-card__cta:hover { background: var(--sage); }
+
+/* ============================================================
+   EMBEDDED ORDER FORM (HCT/P tab)
+   ============================================================ */
+.plp-order-intro {
+  max-width: 68ch;
+  margin-bottom: var(--sp-10);
+}
+.plp-order-intro h2 {
+  font-family: var(--font-display);
+  font-size: var(--h2);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--charcoal);
+  margin-bottom: var(--sp-4);
+}
+.plp-order-intro p {
+  font-size: var(--fs-15);
+  color: var(--muted);
+  line-height: var(--lh-relaxed);
+}
+
+.plp-order-deadline {
+  background: var(--sage-lightest, #f0f7f0);
+  border: 1px solid var(--sage);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4) var(--sp-6);
+  font-size: var(--fs-14);
+  color: var(--sage-deepest);
+  margin-bottom: var(--sp-10);
+}

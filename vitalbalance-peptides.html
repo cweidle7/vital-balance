@@ -17,12 +17,15 @@
     </a>
     <div class="nav__center">
       <a class="nav__link" href="vitalbalance-about.html">About</a>
-      <a class="nav__link" href="vitalbalance-products.html">Products</a>
-      <a class="nav__link" href="vitalbalance-peptides.html" aria-current="page">Peptides</a>
+      <a class="nav__link" href="vitalbalance-plp.html" aria-current="page">Products</a>
       <a class="nav__link" href="#contact">Contact</a>
     </div>
     <div class="nav__right">
-      <a class="nav__cta" href="vitalbalance-order.html">Order Form</a>
+      <a class="nav__cta" href="vitalbalance-plp.html">View Products</a>
+      <a class="nav__cart" href="vitalbalance-plp.html" aria-label="View cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav__cart-badge" id="cart-badge" hidden>0</span>
+      </a>
       <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -31,10 +34,9 @@
     <button class="nav-overlay__close" aria-label="Close menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg>
     </button>
-    <a class="nav-overlay__cta" href="vitalbalance-order.html">Order Form</a>
+    <a class="nav-overlay__cta" href="vitalbalance-plp.html">View Products</a>
     <a class="nav-overlay__link" href="vitalbalance-about.html">About</a>
-    <a class="nav-overlay__link" href="vitalbalance-products.html">Products</a>
-    <a class="nav-overlay__link" href="vitalbalance-peptides.html">Peptides</a>
+    <a class="nav-overlay__link" href="vitalbalance-plp.html">Products</a>
     <a class="nav-overlay__link" href="#contact">Contact</a>
   </div>
 
@@ -88,7 +90,7 @@
             <div class="peptide-row">
               <div class="peptide-row__meta">
                 <div class="peptide-row__name-line"><span class="peptide-row__name">TB-500</span><span class="peptide-row__size">10mg</span></div>
-                <p class="peptide-row__desc">Thymosin Beta-4 fragment. Tissue regeneration, angiogenesis, and cellular repair.</p>
+                <p class="peptide-row__desc">Thymosin Beta-4 fragment. Supports cellular repair processes and connective tissue integrity.</p>
               </div>
               <span class="peptide-row__price">$60.00</span>
               <div class="peptide-row__action"><a class="btn btn--outline-sage btn--sm" href="mailto:orders@vitalbalance.bio?subject=Peptide%20Order%20%E2%80%94%20TB-500%2010mg">Order</a></div>
@@ -272,7 +274,7 @@
             <div class="peptide-row">
               <div class="peptide-row__meta">
                 <div class="peptide-row__name-line"><span class="peptide-row__name">GHK-Cu / TB-500 / BPC-157 / KPV "KLOW"</span><span class="peptide-row__size">50mg / 10mg / 10mg / 10mg</span></div>
-                <p class="peptide-row__desc">Four-peptide stack. Broad-spectrum tissue repair and longevity protocol.</p>
+                <p class="peptide-row__desc">Four-peptide stack. Broad-spectrum cellular support and longevity research protocol.</p>
               </div>
               <span class="peptide-row__price">$112.00</span>
               <div class="peptide-row__action"><a class="btn btn--outline-sage btn--sm" href="mailto:orders@vitalbalance.bio?subject=Peptide%20Order%20%E2%80%94%20KLOW%20Blend">Order</a></div>
@@ -308,7 +310,7 @@
             <div class="peptide-row">
               <div class="peptide-row__meta">
                 <div class="peptide-row__name-line"><span class="peptide-row__name">Selank</span><span class="peptide-row__size">10mg</span></div>
-                <p class="peptide-row__desc">Synthetic heptapeptide anxiolytic. Stress reduction, cognitive enhancement, immune modulation.</p>
+                <p class="peptide-row__desc">Synthetic heptapeptide anxiolytic. Studied for stress reduction, cognitive performance, and neurological support.</p>
               </div>
               <span class="peptide-row__price">$44.00</span>
               <div class="peptide-row__action"><a class="btn btn--outline-sage btn--sm" href="mailto:orders@vitalbalance.bio?subject=Peptide%20Order%20%E2%80%94%20Selank%2010mg">Order</a></div>
@@ -491,9 +493,8 @@
           <ul class="footer__list">
             <li><a href="vitalbalance-home.html">Home</a></li>
             <li><a href="vitalbalance-about.html">About</a></li>
-            <li><a href="vitalbalance-products.html">Products</a></li>
-            <li><a href="vitalbalance-peptides.html">Peptides</a></li>
-            <li><a href="vitalbalance-order.html">Order Form</a></li>
+            <li><a href="vitalbalance-plp.html">Products</a></li>
+            <li><a href="vitalbalance-order.html">HCT/P Order Form</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -507,6 +508,7 @@
           </ul>
         </div>
       </div>
+      <p class="footer__disclaimer">For use by licensed healthcare professionals only. Not for consumer sale. These products are not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary; no outcomes are guaranteed.</p>
       <div class="footer__bottom">
         <span>© 2026 Vital Balance, Inc.</span>
         <div class="footer__certs">

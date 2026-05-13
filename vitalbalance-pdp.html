@@ -16,22 +16,25 @@
     </a>
     <div class="nav__center">
       <a class="nav__link" href="vitalbalance-about.html">About</a>
-      <a class="nav__link" href="vitalbalance-products.html">Products</a>
-      <a class="nav__link" href="#">Services</a>
-      <a class="nav__link" href="#">Contact</a>
+      <a class="nav__link" href="vitalbalance-plp.html">Products</a>
+      <a class="nav__link" href="#contact">Contact</a>
     </div>
     <div class="nav__right">
-      <a class="nav__cta" href="#">Get Started</a>
+      <a class="nav__cta" href="vitalbalance-plp.html">View Products</a>
+      <a class="nav__cart" href="vitalbalance-plp.html" aria-label="View cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav__cart-badge" id="cart-badge" hidden>0</span>
+      </a>
       <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <div class="nav-overlay">
+  <div class="nav-overlay" aria-hidden="true">
     <button class="nav-overlay__close" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <a class="nav-overlay__cta" href="vitalbalance-plp.html">View Products</a>
     <a class="nav-overlay__link" href="vitalbalance-about.html">About</a>
-    <a class="nav-overlay__link" href="vitalbalance-products.html">Products</a>
-    <a class="nav-overlay__link" href="#">Services</a>
-    <a class="nav-overlay__link" href="#">Contact</a>
+    <a class="nav-overlay__link" href="vitalbalance-plp.html">Products</a>
+    <a class="nav-overlay__link" href="#contact">Contact</a>
   </div>
 
   <main class="pdp">
@@ -39,7 +42,7 @@
       <nav class="pdp-crumbs" aria-label="Breadcrumb">
         <a href="vitalbalance-home.html">Home</a>
         <span aria-hidden="true">/</span>
-        <a href="vitalbalance-plp.html">Shop</a>
+        <a href="vitalbalance-plp.html">Products</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">NAD+ Restorative Tonic</span>
       </nav>
@@ -60,7 +63,7 @@
         <section class="pdp-info" aria-label="Product details">
           <span class="eyebrow pdp-info__cat">Longevity</span>
           <h1>NAD+ Restorative <em>Tonic</em></h1>
-          <p class="pdp-info__tagline">A clinical-grade nicotinamide riboside complex, formulated for cellular repair pathways.</p>
+          <p class="pdp-info__tagline">A pharmaceutical-grade nicotinamide riboside complex, formulated as a cellular energy substrate.</p>
 
           <div class="pdp-info__rating">
             <span class="stars">
@@ -120,7 +123,7 @@
 
           <div class="pdp-benefits">
             <div class="pdp-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><span class="pdp-benefit-label">Third-party tested</span></div>
-            <div class="pdp-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M5 9c0-4 7-4 7-4s7 0 7 4M5 14c0-4 7-4 7-4s7 0 7 4"/></svg><span class="pdp-benefit-label">Regenerative</span></div>
+            <div class="pdp-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M5 9c0-4 7-4 7-4s7 0 7 4M5 14c0-4 7-4 7-4s7 0 7 4"/></svg><span class="pdp-benefit-label">Pharmaceutical-grade</span></div>
             <div class="pdp-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V12M4 12V8a8 8 0 0 1 16 0v4"/><circle cx="12" cy="12" r="2"/></svg><span class="pdp-benefit-label">No fillers</span></div>
             <div class="pdp-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="pdp-benefit-label">90 day supply</span></div>
           </div>
@@ -134,8 +137,8 @@
             </div>
 
             <div class="pdp-tabs__panel" data-active="true" data-panel="desc">
-              <p>NAD+ is the molecular currency of cellular repair. As we age, levels decline — and with them, the body's capacity to fuel mitochondria, repair DNA, and clear cellular debris. This formula pairs nicotinamide riboside (NR) with a synergistic methylation matrix, giving every cell the precursors it needs to make NAD+ on its own.</p>
-              <p>Built alongside the practitioners who prescribe it, refined through six rounds of clinical testing, and bottled in glass — because anything we ask the body to absorb deserves a vessel that respects it.</p>
+              <p>NAD+ (Nicotinamide Adenine Dinucleotide) is a coenzyme central to mitochondrial energy metabolism and DNA biology. Levels decline with age. This formula pairs nicotinamide riboside (NR) with a synergistic methylation matrix, providing each cell with the precursors required for endogenous NAD+ biosynthesis.</p>
+              <p>Formulated alongside practicing clinicians, manufactured to pharmaceutical-grade standards, and bottled in glass for substrate integrity.</p>
             </div>
             <div class="pdp-tabs__panel" data-active="false" data-panel="ing">
               <ul>
@@ -151,70 +154,13 @@
               <p>For practitioner-supervised protocols, dosing may scale to 4–6 capsules daily, divided across meals.</p>
             </div>
             <div class="pdp-tabs__panel" data-active="false" data-panel="sci">
-              <p>NAD+ depletion is one of the twelve recognized hallmarks of aging. Restoring it via dietary precursors has been shown in multiple human trials to improve mitochondrial function, sleep quality, and metabolic markers — without the bioavailability and methylation drain of older NMN-only formulas.</p>
-              <p>Our Certificate of Analysis is published with every batch. Read the full clinical brief in our Science library.</p>
+              <p>NAD+ depletion is widely cited in published literature as a marker of cellular aging. Dietary supplementation with NAD+ precursors is the subject of ongoing clinical research. Published peer-reviewed studies are available upon request. Clinical application is the sole judgment of the licensed treating provider.</p>
+              <p>A Certificate of Analysis is provided with every batch — third-party verified purity and sterility.</p>
             </div>
           </div>
         </section>
       </article>
     </div>
-
-    <!-- ============== Reviews ============== -->
-    <section class="pdp-reviews container" id="reviews">
-      <header class="section-head" style="align-items:center;">
-        <div class="section-head__title">
-          <p class="eyebrow">From our community</p>
-          <h2>What members <em>are saying</em>.</h2>
-        </div>
-        <a class="section-head__link link-underline" href="#">All 412 reviews →</a>
-      </header>
-      <div class="pdp-reviews__top">
-        <div>
-          <div class="pdp-reviews__avg">4.9<em>/</em>5</div>
-          <p class="pdp-reviews__count">Based on 412 verified reviews</p>
-        </div>
-        <div class="pdp-bars">
-          <div class="pdp-bar"><span>5 stars</span><div class="pdp-bar__track"><div class="pdp-bar__fill" style="width:86%"></div></div><span>86%</span></div>
-          <div class="pdp-bar"><span>4 stars</span><div class="pdp-bar__track"><div class="pdp-bar__fill" style="width:11%"></div></div><span>11%</span></div>
-          <div class="pdp-bar"><span>3 stars</span><div class="pdp-bar__track"><div class="pdp-bar__fill" style="width:2%"></div></div><span>2%</span></div>
-          <div class="pdp-bar"><span>2 stars</span><div class="pdp-bar__track"><div class="pdp-bar__fill" style="width:1%"></div></div><span>1%</span></div>
-          <div class="pdp-bar"><span>1 star</span><div class="pdp-bar__track"><div class="pdp-bar__fill" style="width:0%"></div></div><span>0%</span></div>
-        </div>
-      </div>
-      <div class="reviews__grid">
-        <article class="review-card"><span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg></span><blockquote>"My energy curve is finally even — not spikes, not crashes. Three weeks and counting."</blockquote><p class="review-card__meta"><strong>Eleanor M.</strong> · Boulder, CO · <em>verified</em></p></article>
-        <article class="review-card"><span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg></span><blockquote>"Glass bottle, no fillers, transparent COA. This is what supplement formulation should look like."</blockquote><p class="review-card__meta"><strong>Tomás V.</strong> · Austin, TX · <em>verified</em></p></article>
-        <article class="review-card"><span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7 7 .5-5.5 4.5L18 22l-6-4-6 4 1.5-8L2 9.5 9 9z"/></svg></span><blockquote>"My skin clarity has shifted in a way no topical ever managed. Quietly remarkable."</blockquote><p class="review-card__meta"><strong>Priya R.</strong> · Brooklyn, NY · <em>verified</em></p></article>
-      </div>
-    </section>
-
-    <!-- ============== Related ============== -->
-    <section class="pdp-related container">
-      <header class="section-head">
-        <div class="section-head__title">
-          <p class="eyebrow">Pair Together</p>
-          <h2>Complete your <em>ritual</em>.</h2>
-        </div>
-      </header>
-      <div class="pdp-related__row">
-        <a class="product-card is-visible" href="vitalbalance-pdp.html">
-          <div class="product-card__media"><div class="product-card__image product-card__image--adaptogen"></div></div>
-          <div class="product-card__body"><span class="product-card__category">Adaptogen</span><h3 class="product-card__name">Cellular Vitality</h3><p class="product-card__hook">Sustained energy.</p><div class="product-card__meta"><span class="product-card__price">$68</span></div></div>
-        </a>
-        <a class="product-card is-visible" href="vitalbalance-pdp.html">
-          <div class="product-card__media"><div class="product-card__image product-card__image--cellular"></div></div>
-          <div class="product-card__body"><span class="product-card__category">Cellular</span><h3 class="product-card__name">Mitochondrial Restore</h3><p class="product-card__hook">At the source.</p><div class="product-card__meta"><span class="product-card__price">$54</span></div></div>
-        </a>
-        <a class="product-card is-visible" href="vitalbalance-pdp.html">
-          <div class="product-card__media"><div class="product-card__image product-card__image--mineral"></div></div>
-          <div class="product-card__body"><span class="product-card__category">Mineral</span><h3 class="product-card__name">Trace Mineral Reserve</h3><p class="product-card__hook">Ancient seabeds.</p><div class="product-card__meta"><span class="product-card__price">$36</span></div></div>
-        </a>
-        <a class="product-card is-visible" href="vitalbalance-pdp.html">
-          <div class="product-card__media"><div class="product-card__image product-card__image--immune"></div></div>
-          <div class="product-card__body"><span class="product-card__category">Immune</span><h3 class="product-card__name">Reishi Spore</h3><p class="product-card__hook">Wild-foraged.</p><div class="product-card__meta"><span class="product-card__price">$48</span></div></div>
-        </a>
-      </div>
-    </section>
 
     <!-- Sticky bottom buy bar — appears after scrolling past the in-page CTA -->
     <div class="pdp-stickybar" id="stickybar" aria-hidden="true">
@@ -234,13 +180,33 @@
       <div class="footer__grid">
         <div>
           <p class="footer__brand-tag">Vital Balance</p>
-          <p class="footer__blurb">Regenerative wellness, formulated alongside the practitioners who use it.</p>
+          <p class="footer__blurb">Premium HCT/P allografts and research peptides for licensed healthcare providers. Bioethically sourced, rigorously tested.</p>
+          <div class="footer__socials">
+            <a class="footer__social" href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a class="footer__social" href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zm0 6h4v10H4zm6 0h4v2c1-2 4-3 6-1s2 4 2 6v3h-4v-4c0-1-.4-2-2-2s-2 1-2 2v4h-4z"/></svg></a>
+          </div>
         </div>
-        <div class="footer__col"><h4>Shop</h4><ul class="footer__list"><li><a href="vitalbalance-plp.html">All Formulas</a></li><li><a href="#">Subscriptions</a></li></ul></div>
-        <div class="footer__col"><h4>Learn</h4><ul class="footer__list"><li><a href="#">Our Story</a></li><li><a href="#">Journal</a></li></ul></div>
-        <div class="footer__col footer__newsletter"><h4>Letters</h4><form onsubmit="event.preventDefault();"><input type="email" placeholder="your@email.com" /><button type="submit">Join</button></form></div>
+        <div class="footer__col">
+          <h4>Pages</h4>
+          <ul class="footer__list">
+            <li><a href="vitalbalance-home.html">Home</a></li>
+            <li><a href="vitalbalance-about.html">About</a></li>
+            <li><a href="vitalbalance-plp.html">Products</a></li>
+            <li><a href="vitalbalance-order.html">HCT/P Order Form</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul class="footer__list">
+            <li style="color: var(--fg-on-dark-mute); font-size: var(--fs-14);">Salt Lake City, Utah</li>
+            <li style="color: var(--fg-on-dark-mute); font-size: var(--fs-14);">(801) 949-8256</li>
+            <li><a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a></li>
+            <li><a href="mailto:support@vitalbalance.bio">support@vitalbalance.bio</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer__bottom"><span>© 2026 Vital Balance, Inc.</span><div class="footer__certs"><span>USDA Organic</span><span>NSF Certified</span></div></div>
+      <p class="footer__disclaimer">For use by licensed healthcare professionals only. Not for consumer sale. These products are not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary; no outcomes are guaranteed.</p>
+      <div class="footer__bottom"><span>© 2026 Vital Balance, Inc.</span><div class="footer__certs"><span>Third-Party Tested</span><span>COA Per Batch</span></div></div>
     </div>
   </footer>
 
