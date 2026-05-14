@@ -18,17 +18,26 @@
   const overlay = document.querySelector(".nav-overlay");
   const overlayClose = document.querySelector(".nav-overlay__close");
 
+  function getFocusable(el) {
+    return [...el.querySelectorAll(
+      'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )];
+  }
+
   function openOverlay() {
     overlay.classList.add("is-open");
     overlay.setAttribute("aria-hidden", "false");
     ham.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
+    const focusable = getFocusable(overlay);
+    if (focusable.length) focusable[0].focus();
   }
   function closeOverlay() {
     overlay.classList.remove("is-open");
     overlay.setAttribute("aria-hidden", "true");
     ham.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
+    ham.focus();
   }
 
   if (ham && overlay) {
@@ -37,6 +46,23 @@
   if (overlayClose && overlay) {
     overlayClose.addEventListener("click", closeOverlay);
   }
+
+  // Focus trap inside overlay
+  if (overlay) {
+    overlay.addEventListener("keydown", e => {
+      if (!overlay.classList.contains("is-open") || e.key !== "Tab") return;
+      const focusable = getFocusable(overlay);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+  }
+
   document.addEventListener("keydown", e => {
     if (e.key === "Escape" && overlay && overlay.classList.contains("is-open")) closeOverlay();
   });

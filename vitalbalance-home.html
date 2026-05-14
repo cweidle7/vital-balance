@@ -35,7 +35,7 @@
     </div>
   </nav>
 
-  <div class="nav-overlay" aria-hidden="true">
+  <div class="nav-overlay" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Navigation menu">
     <button class="nav-overlay__close" aria-label="Close menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg>
     </button>
@@ -189,41 +189,111 @@
         </div>
         <div class="contact-form-card reveal">
           <p class="contact-form-card__intro">Thank you for your interest in Vital Balance. Fill out the form below and an account executive will reach out within 24 hours to provide assistance and answer any questions you may have.</p>
-          <form onsubmit="event.preventDefault(); this.querySelector('.contact-form__submit').textContent='Submitted. We\'ll be in touch!'">
+          <div class="contact-form__success" id="cf-success" role="status" aria-live="polite" hidden>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+            Submitted — we'll be in touch within 24 hours.
+          </div>
+          <form id="contact-form" novalidate>
             <div class="contact-form__row">
               <div class="contact-form__field">
-                <label for="cf-first">First Name *</label>
-                <input type="text" id="cf-first" name="first_name" required placeholder="Jane" />
+                <label for="cf-first">First Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="cf-first" name="first_name" required autocomplete="given-name"
+                  aria-required="true" aria-describedby="cf-first-err" placeholder="Jane" />
+                <span class="contact-form__error" id="cf-first-err" role="alert"></span>
               </div>
               <div class="contact-form__field">
-                <label for="cf-last">Last Name *</label>
-                <input type="text" id="cf-last" name="last_name" required placeholder="Smith" />
+                <label for="cf-last">Last Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="cf-last" name="last_name" required autocomplete="family-name"
+                  aria-required="true" aria-describedby="cf-last-err" placeholder="Smith" />
+                <span class="contact-form__error" id="cf-last-err" role="alert"></span>
               </div>
             </div>
             <div class="contact-form__field">
               <label for="cf-clinic">Clinic / Organization</label>
-              <input type="text" id="cf-clinic" name="clinic_name" placeholder="Clinic or organization (optional)" />
+              <input type="text" id="cf-clinic" name="clinic_name" autocomplete="organization"
+                placeholder="Clinic or organization (optional)" />
             </div>
             <div class="contact-form__field">
               <label for="cf-location">Location (City &amp; State)</label>
-              <input type="text" id="cf-location" name="clinic_location" placeholder="Los Angeles, CA" />
+              <input type="text" id="cf-location" name="clinic_location" autocomplete="address-level2"
+                placeholder="Los Angeles, CA" />
             </div>
             <div class="contact-form__row">
               <div class="contact-form__field">
-                <label for="cf-email">Email *</label>
-                <input type="email" id="cf-email" name="email" required placeholder="jane@clinic.com" />
+                <label for="cf-email">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="cf-email" name="email" required autocomplete="email"
+                  aria-required="true" aria-describedby="cf-email-err" placeholder="jane@clinic.com" />
+                <span class="contact-form__error" id="cf-email-err" role="alert"></span>
               </div>
               <div class="contact-form__field">
                 <label for="cf-phone">Phone</label>
-                <input type="tel" id="cf-phone" name="phone" placeholder="(555) 000-0000" />
+                <input type="tel" id="cf-phone" name="phone" autocomplete="tel"
+                  placeholder="(555) 000-0000" />
               </div>
             </div>
             <div class="contact-form__field">
               <label for="cf-message">Message</label>
-              <textarea id="cf-message" name="message" placeholder="Tell us about your clinic and how we can help..."></textarea>
+              <textarea id="cf-message" name="message" autocomplete="off"
+                placeholder="Tell us about your clinic and how we can help..."></textarea>
             </div>
             <button type="submit" class="contact-form__submit">Submit</button>
           </form>
+          <script>
+            (function () {
+              var form = document.getElementById("contact-form");
+              var success = document.getElementById("cf-success");
+              function showError(input, msgId, msg) {
+                var el = document.getElementById(msgId);
+                if (el) { el.textContent = msg; }
+                input.setAttribute("aria-invalid", "true");
+                input.closest(".contact-form__field").classList.add("contact-form__field--error");
+              }
+              function clearError(input, msgId) {
+                var el = document.getElementById(msgId);
+                if (el) { el.textContent = ""; }
+                input.removeAttribute("aria-invalid");
+                input.closest(".contact-form__field").classList.remove("contact-form__field--error");
+              }
+              ["cf-first","cf-last","cf-email"].forEach(function(id) {
+                var input = document.getElementById(id);
+                if (!input) return;
+                var errId = id + "-err";
+                input.addEventListener("blur", function() {
+                  if (input.validity.valueMissing) {
+                    showError(input, errId, "This field is required.");
+                  } else if (input.validity.typeMismatch) {
+                    showError(input, errId, "Please enter a valid email address.");
+                  } else {
+                    clearError(input, errId);
+                  }
+                });
+                input.addEventListener("input", function() {
+                  if (input.getAttribute("aria-invalid") === "true" && input.validity.valid) {
+                    clearError(input, errId);
+                  }
+                });
+              });
+              form.addEventListener("submit", function(e) {
+                e.preventDefault();
+                var valid = true;
+                [["cf-first","cf-first-err"],["cf-last","cf-last-err"],["cf-email","cf-email-err"]].forEach(function(pair) {
+                  var input = document.getElementById(pair[0]);
+                  if (!input.validity.valid) {
+                    valid = false;
+                    var msg = input.validity.valueMissing ? "This field is required." : "Please enter a valid email address.";
+                    showError(input, pair[1], msg);
+                  }
+                });
+                if (!valid) {
+                  var firstErr = form.querySelector("[aria-invalid='true']");
+                  if (firstErr) firstErr.focus();
+                  return;
+                }
+                form.hidden = true;
+                success.hidden = false;
+              });
+            })();
+          </script>
         </div>
       </div>
     </div>
@@ -254,8 +324,8 @@
         <div class="footer__col">
           <h4>Contact</h4>
           <ul class="footer__list">
-            <li style="color: var(--fg-on-dark-mute); font-size: var(--fs-14);">Salt Lake City, Utah</li>
-            <li style="color: var(--fg-on-dark-mute); font-size: var(--fs-14);">(801) 949-8256</li>
+            <li>Salt Lake City, Utah</li>
+            <li>(801) 949-8256</li>
             <li><a href="mailto:orders@vitalbalance.bio">orders@vitalbalance.bio</a></li>
             <li><a href="mailto:support@vitalbalance.bio">support@vitalbalance.bio</a></li>
           </ul>

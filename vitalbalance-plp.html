@@ -25,7 +25,7 @@
       <a class="nav__link" href="vitalbalance-home.html#contact">Contact</a>
     </div>
     <div class="nav__right">
-      <a class="nav__cta" href="vitalbalance-plp.html">View Products</a>
+      <a class="nav__cta" href="#main-content">Browse Products</a>
       <button class="nav__cart" id="nav-cart-btn" aria-label="View cart" onclick="toggleCartDrawer()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="nav__cart-badge" id="cart-badge" hidden>0</span>
@@ -34,7 +34,7 @@
     </div>
   </nav>
 
-  <div class="nav-overlay" aria-hidden="true">
+  <div class="nav-overlay" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Navigation menu">
     <button class="nav-overlay__close" aria-label="Close menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg>
     </button>
@@ -78,7 +78,7 @@
     <!-- ============================================================
          TAB 1: RESEARCH PEPTIDES
          ============================================================ -->
-    <div class="plp-tab-panel is-active" id="tab-peptides" role="tabpanel" aria-labelledby="tbtn-peptides">
+    <div class="plp-tab-panel is-active" id="tab-peptides" role="tabpanel" aria-labelledby="tbtn-peptides" tabindex="0">
       <div class="container" style="padding-top: var(--sp-10); padding-bottom: var(--section-y);">
 
         <!-- Research disclaimer -->
@@ -639,7 +639,7 @@
     <!-- ============================================================
          TAB 2: HCT/P ORDER FORM
          ============================================================ -->
-    <div class="plp-tab-panel" id="tab-hctp" role="tabpanel" aria-labelledby="tbtn-hctp">
+    <div class="plp-tab-panel" id="tab-hctp" role="tabpanel" aria-labelledby="tbtn-hctp" tabindex="0">
       <div class="container" style="padding-bottom: var(--section-y);">
 
         <div class="plp-order-intro">
