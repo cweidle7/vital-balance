@@ -27,12 +27,12 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="nav__cart-badge" id="cart-badge" hidden>0</span>
       </a>
-      <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button type="button" class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
   <div class="nav-overlay" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Navigation menu">
-    <button class="nav-overlay__close" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <button type="button" class="nav-overlay__close" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
     <a class="nav-overlay__cta" href="vitalbalance-plp.html">View Products</a>
     <a class="nav-overlay__link" href="vitalbalance-about.html">About</a>
     <a class="nav-overlay__link" href="vitalbalance-plp.html">Products</a>
@@ -54,10 +54,10 @@
         <section class="pdp-media" aria-label="Product imagery">
           <div class="pdp-media__main" id="pdpMain"></div>
           <div class="pdp-media__thumbs" role="group" aria-label="Thumbnails">
-            <button class="pdp-media__thumb" aria-pressed="true" aria-label="View 1"></button>
-            <button class="pdp-media__thumb" aria-pressed="false" aria-label="View 2"></button>
-            <button class="pdp-media__thumb" aria-pressed="false" aria-label="View 3"></button>
-            <button class="pdp-media__thumb" aria-pressed="false" aria-label="View 4"></button>
+            <button type="button" class="pdp-media__thumb" aria-pressed="true" aria-label="View 1"></button>
+            <button type="button" class="pdp-media__thumb" aria-pressed="false" aria-label="View 2"></button>
+            <button type="button" class="pdp-media__thumb" aria-pressed="false" aria-label="View 3"></button>
+            <button type="button" class="pdp-media__thumb" aria-pressed="false" aria-label="View 4"></button>
           </div>
         </section>
 
@@ -94,33 +94,33 @@
           <div class="pdp-variant-group">
             <span class="pdp-variant-group__label">Size · count</span>
             <div class="pdp-variant-pills" role="group">
-              <button class="variant-pill" aria-pressed="false">60 ct</button>
-              <button class="variant-pill" aria-pressed="true">90 ct</button>
-              <button class="variant-pill" aria-pressed="false">180 ct</button>
+              <button type="button" class="variant-pill" aria-pressed="false">60 ct</button>
+              <button type="button" class="variant-pill" aria-pressed="true">90 ct</button>
+              <button type="button" class="variant-pill" aria-pressed="false">180 ct</button>
             </div>
           </div>
 
           <div class="pdp-variant-group">
             <span class="pdp-variant-group__label">Format</span>
             <div class="pdp-variant-pills" role="group">
-              <button class="variant-pill" aria-pressed="true">Capsules</button>
-              <button class="variant-pill" aria-pressed="false">Powder</button>
-              <button class="variant-pill" aria-pressed="false">Tincture</button>
+              <button type="button" class="variant-pill" aria-pressed="true">Capsules</button>
+              <button type="button" class="variant-pill" aria-pressed="false">Powder</button>
+              <button type="button" class="variant-pill" aria-pressed="false">Tincture</button>
             </div>
           </div>
 
           <div class="pdp-variant-group">
             <span class="pdp-variant-group__label">Quantity</span>
             <div class="pdp-qty">
-              <button id="qtyMinus" aria-label="Decrease"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"/></svg></button>
+              <button type="button" id="qtyMinus" aria-label="Decrease"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"/></svg></button>
               <span id="qtyVal">1</span>
-              <button id="qtyPlus" aria-label="Increase"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></button>
+              <button type="button" id="qtyPlus" aria-label="Increase"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></button>
             </div>
           </div>
 
           <div class="pdp-cta-stack" id="ctaStack">
-            <button class="btn btn--primary btn--block btn--lg">Add to cart · $92</button>
-            <button class="btn btn--ghost btn--block btn--lg">Subscribe & Save 15%</button>
+            <button type="button" class="btn btn--primary btn--block btn--lg">Add to cart · $92</button>
+            <button type="button" class="btn btn--ghost btn--block btn--lg">Subscribe & Save 15%</button>
           </div>
 
           <div class="pdp-benefits">
@@ -132,10 +132,10 @@
 
           <div class="pdp-tabs">
             <div class="pdp-tabs__list" role="tablist">
-              <button class="pdp-tabs__btn" role="tab" aria-selected="true" aria-controls="pdp-panel-desc" id="pdp-tab-desc" data-tab="desc">Description</button>
-              <button class="pdp-tabs__btn" role="tab" aria-selected="false" aria-controls="pdp-panel-ing" id="pdp-tab-ing" data-tab="ing">Ingredients</button>
-              <button class="pdp-tabs__btn" role="tab" aria-selected="false" aria-controls="pdp-panel-how" id="pdp-tab-how" data-tab="how">How to use</button>
-              <button class="pdp-tabs__btn" role="tab" aria-selected="false" aria-controls="pdp-panel-sci" id="pdp-tab-sci" data-tab="sci">The science</button>
+              <button type="button" class="pdp-tabs__btn" role="tab" aria-selected="true" aria-controls="pdp-panel-desc" id="pdp-tab-desc" data-tab="desc">Description</button>
+              <button type="button" class="pdp-tabs__btn" role="tab" aria-selected="false" aria-controls="pdp-panel-ing" id="pdp-tab-ing" data-tab="ing">Ingredients</button>
+              <button type="button" class="pdp-tabs__btn" role="tab" aria-selected="false" aria-controls="pdp-panel-how" id="pdp-tab-how" data-tab="how">How to use</button>
+              <button type="button" class="pdp-tabs__btn" role="tab" aria-selected="false" aria-controls="pdp-panel-sci" id="pdp-tab-sci" data-tab="sci">The science</button>
             </div>
 
             <div class="pdp-tabs__panel" id="pdp-panel-desc" role="tabpanel" aria-labelledby="pdp-tab-desc" data-active="true" data-panel="desc">
@@ -169,11 +169,11 @@
       <div class="pdp-stickybar__thumb"></div>
       <div class="pdp-stickybar__name">NAD+ Restorative Tonic · 90 ct</div>
       <div class="pdp-qty pdp-stickybar__qty">
-        <button aria-label="Decrease"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"/></svg></button>
+        <button type="button" aria-label="Decrease"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"/></svg></button>
         <span>1</span>
-        <button aria-label="Increase"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></button>
+        <button type="button" aria-label="Increase"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></button>
       </div>
-      <button class="btn btn--primary">Add · $92</button>
+      <button type="button" class="btn btn--primary">Add · $92</button>
     </div>
   </main>
 

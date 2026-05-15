@@ -26,16 +26,16 @@
     </div>
     <div class="nav__right">
       <a class="nav__cta" href="#main-content">Browse Products</a>
-      <button class="nav__cart" id="nav-cart-btn" aria-label="View cart" onclick="toggleCartDrawer()">
+      <button type="button" class="nav__cart" id="nav-cart-btn" aria-label="View cart" onclick="toggleCartDrawer()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="nav__cart-badge" id="cart-badge" hidden>0</span>
       </button>
-      <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button type="button" class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
   <div class="nav-overlay" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Navigation menu">
-    <button class="nav-overlay__close" aria-label="Close menu">
+    <button type="button" class="nav-overlay__close" aria-label="Close menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg>
     </button>
     <a class="nav-overlay__cta" href="vitalbalance-plp.html">View Products</a>
@@ -66,10 +66,10 @@
     <!-- ============== TAB BAR ============== -->
     <div class="container">
       <div class="plp-tab-bar" role="tablist" aria-label="Product categories" style="margin-top: var(--sp-12);">
-        <button class="plp-tab-btn is-active" role="tab" aria-selected="true" aria-controls="tab-peptides" id="tbtn-peptides" data-tab="peptides">
+        <button type="button" class="plp-tab-btn is-active" role="tab" aria-selected="true" aria-controls="tab-peptides" id="tbtn-peptides" data-tab="peptides">
           Research Peptides
         </button>
-        <button class="plp-tab-btn" role="tab" aria-selected="false" aria-controls="tab-hctp" id="tbtn-hctp" data-tab="hctp">
+        <button type="button" class="plp-tab-btn" role="tab" aria-selected="false" aria-controls="tab-hctp" id="tbtn-hctp" data-tab="hctp">
           HCT/P Order Form
         </button>
       </div>
@@ -89,12 +89,12 @@
 
         <!-- Filter pills -->
         <div class="peptide-filter-bar" role="group" aria-label="Filter by category" id="peptide-filters">
-          <button class="peptide-filter-pill is-active" data-filter="all" aria-pressed="true">All Products</button>
-          <button class="peptide-filter-pill" data-filter="recovery" aria-pressed="false">Recovery &amp; Regenerative</button>
-          <button class="peptide-filter-pill" data-filter="metabolic" aria-pressed="false">Metabolic / GLP</button>
-          <button class="peptide-filter-pill" data-filter="longevity" aria-pressed="false">Longevity &amp; Aesthetic</button>
-          <button class="peptide-filter-pill" data-filter="nad" aria-pressed="false">NAD+</button>
-          <button class="peptide-filter-pill" data-filter="supplies" aria-pressed="false">Supplies</button>
+          <button type="button" class="peptide-filter-pill is-active" data-filter="all" aria-pressed="true">All Products</button>
+          <button type="button" class="peptide-filter-pill" data-filter="recovery" aria-pressed="false">Recovery &amp; Regenerative</button>
+          <button type="button" class="peptide-filter-pill" data-filter="metabolic" aria-pressed="false">Metabolic / GLP</button>
+          <button type="button" class="peptide-filter-pill" data-filter="longevity" aria-pressed="false">Longevity &amp; Aesthetic</button>
+          <button type="button" class="peptide-filter-pill" data-filter="nad" aria-pressed="false">NAD+</button>
+          <button type="button" class="peptide-filter-pill" data-filter="supplies" aria-pressed="false">Supplies</button>
         </div>
 
         <!-- Unified product grid -->
@@ -930,7 +930,7 @@
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
     </span>
     <span id="plp-toast-label">Added to cart</span>
-    <button class="plp-toast__close" aria-label="Dismiss" onclick="dismissToast()">
+    <button type="button" class="plp-toast__close" aria-label="Dismiss" onclick="dismissToast()">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>

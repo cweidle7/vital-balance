@@ -62,6 +62,12 @@
 
   --star:         #D6911C;   /* amber star color */
 
+  --error:          #C0392B;
+  --error-shadow:   rgba(192, 57, 43, 0.10);
+  --success-bg:     #EAF7EF;
+  --success-border: #27AE60;
+  --success-text:   #1E8449;
+
   /* ---------- Color: semantic --------------------------------- */
   --bg:              var(--cream);
   --surface:         var(--white);

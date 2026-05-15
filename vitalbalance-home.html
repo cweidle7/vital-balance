@@ -29,14 +29,14 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="nav__cart-badge" id="cart-badge" hidden>0</span>
       </a>
-      <button class="nav__hamburger" aria-label="Open menu">
+      <button type="button" class="nav__hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <div class="nav-overlay" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Navigation menu">
-    <button class="nav-overlay__close" aria-label="Close menu">
+    <button type="button" class="nav-overlay__close" aria-label="Close menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg>
     </button>
     <a class="nav-overlay__cta" href="vitalbalance-plp.html">View Products</a>
@@ -242,47 +242,43 @@
             (function () {
               var form = document.getElementById("contact-form");
               var success = document.getElementById("cf-success");
-              function showError(input, msgId, msg) {
-                var el = document.getElementById(msgId);
-                if (el) { el.textContent = msg; }
-                input.setAttribute("aria-invalid", "true");
-                input.closest(".contact-form__field").classList.add("contact-form__field--error");
-              }
-              function clearError(input, msgId) {
-                var el = document.getElementById(msgId);
-                if (el) { el.textContent = ""; }
-                input.removeAttribute("aria-invalid");
-                input.closest(".contact-form__field").classList.remove("contact-form__field--error");
-              }
-              ["cf-first","cf-last","cf-email"].forEach(function(id) {
+              var fields = ["cf-first","cf-last","cf-email"].map(function(id) {
                 var input = document.getElementById(id);
-                if (!input) return;
-                var errId = id + "-err";
-                input.addEventListener("blur", function() {
-                  if (input.validity.valueMissing) {
-                    showError(input, errId, "This field is required.");
-                  } else if (input.validity.typeMismatch) {
-                    showError(input, errId, "Please enter a valid email address.");
-                  } else {
-                    clearError(input, errId);
-                  }
-                });
-                input.addEventListener("input", function() {
-                  if (input.getAttribute("aria-invalid") === "true" && input.validity.valid) {
-                    clearError(input, errId);
-                  }
+                if (!input) console.warn("Contact form: missing field #" + id);
+                return { input: input, errId: id + "-err" };
+              }).filter(function(f) { return f.input; });
+              function showError(f, msg) {
+                var el = document.getElementById(f.errId);
+                if (el) { el.textContent = msg; }
+                f.input.setAttribute("aria-invalid", "true");
+                f.input.closest(".contact-form__field").classList.add("contact-form__field--error");
+              }
+              function clearError(f) {
+                var el = document.getElementById(f.errId);
+                if (el) { el.textContent = ""; }
+                f.input.removeAttribute("aria-invalid");
+                f.input.closest(".contact-form__field").classList.remove("contact-form__field--error");
+              }
+              function validateField(f) {
+                if (f.input.validity.valueMissing) {
+                  showError(f, "This field is required.");
+                } else if (f.input.validity.typeMismatch) {
+                  showError(f, "Please enter a valid email address.");
+                } else {
+                  clearError(f);
+                }
+              }
+              fields.forEach(function(f) {
+                f.input.addEventListener("blur", function() { validateField(f); });
+                f.input.addEventListener("input", function() {
+                  if (f.input.getAttribute("aria-invalid") === "true" && f.input.validity.valid) clearError(f);
                 });
               });
               form.addEventListener("submit", function(e) {
                 e.preventDefault();
                 var valid = true;
-                [["cf-first","cf-first-err"],["cf-last","cf-last-err"],["cf-email","cf-email-err"]].forEach(function(pair) {
-                  var input = document.getElementById(pair[0]);
-                  if (!input.validity.valid) {
-                    valid = false;
-                    var msg = input.validity.valueMissing ? "This field is required." : "Please enter a valid email address.";
-                    showError(input, pair[1], msg);
-                  }
+                fields.forEach(function(f) {
+                  if (!f.input.validity.valid) { valid = false; validateField(f); }
                 });
                 if (!valid) {
                   var firstErr = form.querySelector("[aria-invalid='true']");

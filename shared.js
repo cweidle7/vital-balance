@@ -17,6 +17,7 @@
   const ham = document.querySelector(".nav__hamburger");
   const overlay = document.querySelector(".nav-overlay");
   const overlayClose = document.querySelector(".nav-overlay__close");
+  let cachedFocusable = []; // nav overlay DOM is static — safe to cache on open
 
   function getFocusable(el) {
     return [...el.querySelectorAll(
@@ -29,8 +30,8 @@
     overlay.setAttribute("aria-hidden", "false");
     ham.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
-    const focusable = getFocusable(overlay);
-    if (focusable.length) focusable[0].focus();
+    cachedFocusable = getFocusable(overlay);
+    if (cachedFocusable.length) cachedFocusable[0].focus();
   }
   function closeOverlay() {
     overlay.classList.remove("is-open");
@@ -50,8 +51,8 @@
   // Focus trap inside overlay
   if (overlay) {
     overlay.addEventListener("keydown", e => {
-      if (!overlay.classList.contains("is-open") || e.key !== "Tab") return;
-      const focusable = getFocusable(overlay);
+      if (e.key !== "Tab" || !overlay.classList.contains("is-open")) return;
+      const focusable = cachedFocusable;
       if (!focusable.length) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
@@ -103,11 +104,17 @@
     });
   }, { threshold: 0.07, rootMargin: "0px 0px -40px 0px" }) : null;
 
+  const revealParents = new Map();
   document.querySelectorAll(".reveal").forEach(el => {
-    const siblings = [...el.parentElement.querySelectorAll(":scope > .reveal")];
-    const idx = siblings.indexOf(el);
-    if (idx > 0) el.style.setProperty("--reveal-delay", `${idx * 80}ms`);
-    if (revealIO) revealIO.observe(el);
-    else el.classList.add("is-visible");
+    const p = el.parentElement;
+    if (!revealParents.has(p)) revealParents.set(p, []);
+    revealParents.get(p).push(el);
+  });
+  revealParents.forEach(children => {
+    children.forEach((el, idx) => {
+      if (idx > 0) el.style.setProperty("--reveal-delay", `${idx * 80}ms`);
+      if (revealIO) revealIO.observe(el);
+      else el.classList.add("is-visible");
+    });
   });
 })();
