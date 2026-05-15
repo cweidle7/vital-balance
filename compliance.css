@@ -1,0 +1,225 @@
+/* ============================================================
+   Vital Balance — Compliance Page
+   ============================================================ */
+
+.compliance-body {
+  padding-block: var(--section-y);
+}
+
+/* ---------- INTRO ALERT ----------------------------------- */
+.compliance-intro {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+  background: #EBF3FA;
+  border: 1px solid rgba(3, 89, 161, 0.22);
+  border-radius: var(--radius-md);
+  padding: var(--sp-5) var(--sp-6);
+  margin-bottom: var(--sp-16);
+}
+.compliance-intro svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--sage);
+}
+.compliance-intro p {
+  margin: 0;
+  font-size: var(--fs-15);
+  color: var(--charcoal);
+  line-height: var(--lh-relaxed);
+}
+
+/* ---------- SECTION WRAPPER ------------------------------- */
+.compliance-section {
+  margin-bottom: var(--sp-4);
+}
+
+.compliance-section__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+}
+
+.compliance-section__icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+}
+
+.compliance-section__head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ---------- DIVIDER --------------------------------------- */
+.compliance-rule {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-block: var(--sp-12);
+}
+
+/* ---------- CARD GRIDS ------------------------------------ */
+.compliance-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+}
+@media (min-width: 640px) {
+  .compliance-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 960px) {
+  .compliance-cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+.compliance-cards--2col {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .compliance-cards--2col { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- CARD ------------------------------------------ */
+.compliance-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-card);
+}
+
+.compliance-card--caution {
+  border-color: rgba(192, 57, 43, 0.2);
+  background: #FDF5F4;
+}
+
+.compliance-card__lead {
+  font-size: var(--fs-15);
+  color: var(--muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-5);
+}
+
+.compliance-card__title {
+  font-family: var(--font-body);
+  font-size: var(--fs-16);
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: var(--sp-3);
+}
+
+.compliance-card__text {
+  font-size: var(--fs-14);
+  color: var(--muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-3);
+}
+.compliance-card__text:last-child { margin-bottom: 0; }
+.compliance-card__text strong { color: var(--charcoal); font-weight: 600; }
+.compliance-card__text em { font-style: italic; color: var(--charcoal); }
+
+.compliance-card__note {
+  font-size: var(--fs-13);
+  color: var(--muted-light);
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
+  line-height: var(--lh-relaxed);
+}
+
+/* ---------- LISTS ----------------------------------------- */
+.compliance-disclaimer-list,
+.compliance-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.compliance-disclaimer-list li,
+.compliance-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: var(--fs-14);
+  color: var(--charcoal);
+  line-height: var(--lh-relaxed);
+}
+
+.compliance-disclaimer-list li::before,
+.compliance-card__list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sage);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.compliance-card__list--caution li::before {
+  background: var(--error);
+}
+
+/* ---------- CONTACT CTA ----------------------------------- */
+.compliance-cta {
+  margin-top: var(--sp-12);
+  background: linear-gradient(150deg, #024A8A 0%, #012D57 100%);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--sp-10), 5vw, var(--sp-16)) clamp(var(--sp-8), 5vw, var(--sp-12));
+  color: var(--cream);
+}
+
+.compliance-cta__inner {
+  display: flex;
+  gap: var(--sp-8);
+  align-items: flex-start;
+}
+
+@media (max-width: 640px) {
+  .compliance-cta__inner { flex-direction: column; gap: var(--sp-5); }
+}
+
+.compliance-cta__icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+}
+
+.compliance-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: var(--sp-3);
+}
+
+.compliance-cta p {
+  font-size: var(--fs-15);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-6);
+  max-width: 55ch;
+}
+
+.compliance-cta__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
